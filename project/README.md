@@ -1,18 +1,35 @@
-🔹 Steg 1: Projektförberedelser
-1. Skapa repo på GitHub  
-2. Namnge projektet t.ex. silicon-website.  
-3. Skapa main-branch.  
-4. Lägg in en enkel README.md med projektinfo.  
-5. Skapa struktur lokalt:  
-    - index.html  
-    - style.css  
-    - script.js  
-    - assets/ (bilder, ikoner etc.)  
-6. Installera ev. hjälpbibliotek  
-7. Bestäm om du vill använda Tailwind eller Bootstrap (frivilligt).  
-    Annars kör du med ren HTML/CSS/JS.
+🔹 Steg 1: Projektförberedelser ✅
 
-🔸 Steg 2: Designanalys
+1. Skapa repo på GitHub ✔️  
+2. Namnge projektet t.ex. silicon-website ✔️  
+3. Skapa main-branch ✔️  
+4. Lägg in en enkel README.md med projektinfo ✔️  
+5. Skapa struktur lokalt:  
+  - index.html ✔️  
+  - style.css ✔️  
+  - script.js ✔️  
+  - assets/ (bilder, ikoner etc.) ✔️  
+6. Installera ev. hjälpbibliotek ✔️  
+7. Bestäm om du vill använda Tailwind eller Bootstrap (frivilligt).  
+  Annars kör du med ren HTML/CSS/JS. ✔️
+
+🔸 Steg 2: Designanalys (pågående)
+
+- Gå igenom Silicon Design Template.fig i Figma.
+- Identifiera och dokumentera sektionerna (uppdatera vid behov):
+  - Header
+  - Hero
+  - Brands
+  - Features
+  - How-Does-It-Work
+  - App Features
+  - Testimonials
+  - FAQ (Accordion)
+  - Subscribe
+  - Footer
+- Notera och analysera färger, typsnitt, spacing, knappar etc.
+- Uppdatera analysen löpande under projektets gång.
+- Dokumentera eventuella designändringar eller tillägg.
 
 1. Öppna Silicon Design Template.fig i Figma.  
 2. Identifiera sektionerna (VG kräver alla):  
