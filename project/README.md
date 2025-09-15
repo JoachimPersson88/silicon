@@ -45,7 +45,7 @@
     - Footer  
     Notera färger, typsnitt, spacing, knappar etc.
 
-🔸 Steg 3: Kodstruktur & Branch-strategi
+🔸 Steg 3: Kodstruktur & Branch-strategi (pågående)
 
 För VG måste du använda olika brancher för sektionerna:
 

@@ -1,48 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /* Importerar Manrope-fonten från Google Fonts */
 
-
-*,  *::before, *::after {    /* *::before, *::after - Detta nollställer */
-  box-sizing: border-box;
-  margin: 0;
+/* Nollställer vissa standardinställningar för alla element samt deras pseudo-element (::before, ::after) */
+*, *::before, *::after {    
+  box-sizing: border-box; /* Inkluderar padding och border i elementets totala storlek */
+  margin: 0; /* Tar bort standardmarginaler på alla element */
 }
 
 :root {
-  --primary: #6366F1;
+  --primary: #6366F1; /* Huvudfärg, används som bas för knappar och andra element */
 
-  --color-body-text: #565973;
-  --color-body-background: #f4f4f4;
-  --color-heading-text: #0b0c1e;
+  --color-body-text: #565973; /* Textfärg för brödtext */
+  --color-body-background: #f4f4f4; /* Bakgrundsfärg för sidan */
+  --color-heading-text: #0c0fcc; /* Textfärg för rubriker */
 
-  --color-button-text: #ffffff;
-  --color-button-background: var(--primary);
+  --color-button-text: #ffffff; /* Textfärg för knappar */
+  --color-button-background: var(--primary); /* Bakgrundsfärg för knappar */
+  --color-button-hover-background: #0c0fcc; /* Bakgrundsfärg för knappar vid hover */
 }
 
-
 body {
-  line-height: 1.5;
-  background-color: #f4f4f4;
-  font-family: "Manrope", sans-serif;
-  font-style: normal;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--color-body-text);
-  background-color: var(--color-body-background);
+  line-height: 1.5; /* Sätter radavståndet för text */
+  background-color: #f4f4f4; /* Grundbakgrundsfärg (dubbeldefinierad men skrivs över nedan) */
+  font-family: "Manrope", sans-serif; /* Använder Manrope som standardfont */
+  font-style: normal; /* Standard textstil */
+  font-weight: 400; /* Normal textvikt */
+  color: var(--color-body-text); /* Textfärg från variabel */
+  background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-heading-text);
+  color: var(--color-heading-text); /* Ger rubriker en specifik färg */
 }
 
-button {
-  color: var(--color-button-text);
-  background-color: var(--color-button-background);
+button, .btn {
+  display: flex; /* Gör knappar till flexbox-containrar */
+  justify-content: center; /* Centrerar innehåll horisontellt */
+  align-items: center; /* Centrerar innehåll vertikalt */
+  gap: 10px; /* Mellanrum mellan element inuti knappen */
+  height: 42px; /* Fast höjd på knappen */
+
+  color: var(--color-button-text); /* Textfärg för knappen */
+  background-color: var(--color-button-background); /* Bakgrundsfärg för knappen */
+  padding: 10px 20px; /* Inre marginal (top/bottom: 10px, left/right: 20px) */
+  border-radius: 4px; /* Rundar hörnen på knappen */
+  text-decoration: none; /* Tar bort understrykning om det är en länk */
+  transition: background 0.3s ease-in-out; /* Smidig övergång vid hover */
+
+  &:hover {
+    background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
+  }
 }
 
 .container {
-  max-width: 1320px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  width: 100%; /* Full bredd */
+  max-width: 1320px; /* Maxbredd på innehållet */
+  margin-left: auto; /* Centrerar container horisontellt */
+  margin-right: auto; /* Centrerar container horisontellt */
+  padding-left: 1rem; /* Ger inre marginal till vänster */
+  padding-right: 1rem; /* Ger inre marginal till höger */
+}
+
+.btn-signin-text {
+  display: none; /* Döljer texten från början */
+
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
+}
+.switch {
+  position: relative; /* Gör att elementets barn kan positioneras absolut i förhållande till detta */
+  display: inline-block; /* Gör elementet inline men tillåter höjd och bredd */
+  width: 60px; /* Bredd på själva switchen */
+  height: 34px; /* Höjd på själva switchen */
   
+}
+
+.switch input {
+  opacity: 0; /* Gör checkboxen osynlig */
+  width: 0; /* Tar bort dess bredd */
+  height: 0; /* Tar bort dess höjd */
+}
+
+.slider {
+  position: absolute; /* Placeras absolut inuti .switch */
+  cursor: pointer; /* Ändrar muspekaren till en hand när man hovrar */
+  top: 0; /* Placerar överdelen längst upp i .switch */
+  left: 0; /* Placerar vänsterkanten längst till vänster */
+  right: 0; /* Placerar högerkanten längst till höger */
+  bottom: 0; /* Placerar nederkanten längst ner */
+  background-color: #9397AD; /* Bakgrundsfärg när switchen är av */
+  -webkit-transition: .4s; /* Mjuk animation för Safari */
+  transition: .4s; /* Mjuk animation för övriga webbläsare */
+}
+
+.slider:before {
+  position: absolute; /* Gör knappen fritt positionerbar inuti slider */
+  content: ""; /* Skapar ett tomt innehåll för "knappen" */
+  height: 26px; /* Höjd på knappen */
+  width: 26px; /* Bredd på knappen */
+  left: 4px; /* Avstånd från vänsterkant */
+  bottom: 4px; /* Avstånd från nederkant */
+  background-color: white; /* Färg på själva knappen */
+  -webkit-transition: .4s; /* Mjuk rörelse i Safari */
+  transition: .4s; /* Mjuk rörelse i övriga webbläsare */
+}
+
+input:checked + .slider {
+  background-color: #6366F1; /* Ändrar bakgrundsfärg när switchen är på */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7173df; /* Liten markering runt switchen vid fokus */
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px); /* Flyttar knappen åt höger i Safari */
+  -ms-transform: translateX(26px); /* Flyttar knappen åt höger i äldre IE */
+  transform: translateX(26px); /* Flyttar knappen åt höger i moderna webbläsare */
+}
+
+.slider.round {
+  border-radius: 34px; /* Gör hela slider-ytan rundad */
+}
+
+.slider.round:before {
+  border-radius: 50%; /* Gör själva knappen helt rund */
+}
+
+.darkmode {
+
+  display: none; /* Döljer texten från början */
+
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
+}
+
+header {
+
+  .header-area {
+    display: flex; /* Lägger header-innehåll i en flexbox */
+    justify-content: space-between; /* Låter elementen ligga på varsin sida */
+    align-items: center; /* Vertikalt centrerade element */
+    padding: 1rem 0; /* Avstånd ovanför och under header */
+
+    .actions {
+      display: flex; /* Flexbox för actions-sektionen */
+      justify-content: space-between; /* Jämnt utrymme mellan elementen */
+      align-items: center; /* Vertikal centrering */
+      gap: 1rem; /* Mellanrum mellan elementen */
+    }
+  }
 }
