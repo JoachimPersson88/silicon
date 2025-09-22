@@ -17,7 +17,7 @@
 
 - Gå igenom Silicon Design Template.fig i Figma.
 - Identifiera och dokumentera sektionerna (uppdatera vid behov):
-  - Header
+  - Header ✔️
   - Hero
   - Brands
   - Features
@@ -33,7 +33,7 @@
 
 1. Öppna Silicon Design Template.fig i Figma.  
 2. Identifiera sektionerna (VG kräver alla):  
-    - Header  
+    - Header ✔️ 
     - Hero  
     - Brands  
     - Features  
@@ -49,11 +49,16 @@
 
 För VG måste du använda olika brancher för sektionerna:
 
-- hero-section  
-- brand-section  
-- features-section  
-- faq-section  
-- … osv.
+    - Header ✔️
+    - Hero  
+    - Brands  
+    - Features  
+    - How-Does-It-Work  
+    - App Features  
+    - Testimonials  
+    - FAQ (Accordion)  
+    - Subscribe  
+    - Footer  
 
 **Arbetsflöde:**  
 1. Skapa branch  

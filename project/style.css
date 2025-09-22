@@ -62,81 +62,21 @@ button, .btn {
 
 .btn-signin-text {
   display: none; /* Döljer texten från början */
-
-  @media (width >= 768px) {
-    display: block; /* Visar texten om skärmen är minst 768px bred */
+  button {
+    font-weight: 600; /* Gör texten i knappen lite fetare */
+    font-size: 16px; /* Sätter textstorleken i knappen */
+    line-height: 24px; /* Sätter radavståndet i knappen */
+    color: white; /* Sätter textfärgen i knappen till vit */
   }
-}
-.switch {
-  position: relative; /* Gör att elementets barn kan positioneras absolut i förhållande till detta */
-  display: inline-block; /* Gör elementet inline men tillåter höjd och bredd */
-  width: 60px; /* Bredd på själva switchen */
-  height: 34px; /* Höjd på själva switchen */
-  
-}
-
-.switch input {
-  opacity: 0; /* Gör checkboxen osynlig */
-  width: 0; /* Tar bort dess bredd */
-  height: 0; /* Tar bort dess höjd */
-}
-
-.slider {
-  position: absolute; /* Placeras absolut inuti .switch */
-  cursor: pointer; /* Ändrar muspekaren till en hand när man hovrar */
-  top: 0; /* Placerar överdelen längst upp i .switch */
-  left: 0; /* Placerar vänsterkanten längst till vänster */
-  right: 0; /* Placerar högerkanten längst till höger */
-  bottom: 0; /* Placerar nederkanten längst ner */
-  background-color: #9397AD; /* Bakgrundsfärg när switchen är av */
-  -webkit-transition: .4s; /* Mjuk animation för Safari */
-  transition: .4s; /* Mjuk animation för övriga webbläsare */
-}
-
-.slider:before {
-  position: absolute; /* Gör knappen fritt positionerbar inuti slider */
-  content: ""; /* Skapar ett tomt innehåll för "knappen" */
-  height: 26px; /* Höjd på knappen */
-  width: 26px; /* Bredd på knappen */
-  left: 4px; /* Avstånd från vänsterkant */
-  bottom: 4px; /* Avstånd från nederkant */
-  background-color: white; /* Färg på själva knappen */
-  -webkit-transition: .4s; /* Mjuk rörelse i Safari */
-  transition: .4s; /* Mjuk rörelse i övriga webbläsare */
-}
-
-input:checked + .slider {
-  background-color: #6366F1; /* Ändrar bakgrundsfärg när switchen är på */
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #7173df; /* Liten markering runt switchen vid fokus */
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px); /* Flyttar knappen åt höger i Safari */
-  -ms-transform: translateX(26px); /* Flyttar knappen åt höger i äldre IE */
-  transform: translateX(26px); /* Flyttar knappen åt höger i moderna webbläsare */
-}
-
-.slider.round {
-  border-radius: 34px; /* Gör hela slider-ytan rundad */
-}
-
-.slider.round:before {
-  border-radius: 50%; /* Gör själva knappen helt rund */
-}
-
-.darkmode {
-
-  display: none; /* Döljer texten från början */
-
   @media (width >= 768px) {
     display: block; /* Visar texten om skärmen är minst 768px bred */
   }
 }
 
-header {
+
+
+
+.header {
 
   .header-area {
     display: flex; /* Lägger header-innehåll i en flexbox */
@@ -150,5 +90,22 @@ header {
       align-items: center; /* Vertikal centrering */
       gap: 1rem; /* Mellanrum mellan elementen */
     }
+  }
+}
+.darkmode {
+  --primary: #818cf8; /* Ändrad huvudfärg för mörkt läge */
+
+  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
+  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
+  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
+
+  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
+  --color-button-background: #a5b4fc; /* Ljusare knappfärg för mörkt läge */
+  --color-button-hover-background: #818cf8; /* Ändrad knappfärg vid hover i mörkt läge */
+
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
   }
 }
