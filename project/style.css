@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /* Importerar Manrope-fonten från Google Fonts */
 
+/* ------------------------- index.html ---------------------------------*/
+
 /* Nollställer vissa standardinställningar för alla element samt deras pseudo-element (::before, ::after) */
 *, *::before, *::after {    
   box-sizing: border-box; /* Inkluderar padding och border i elementets totala storlek */
   margin: 0; /* Tar bort standardmarginaler på alla element */
 }
 
+/* Definierar CSS-variabler för färger och teman */
 :root {
   --primary: #6366F1; /* Huvudfärg, används som bas för knappar och andra element */
 
@@ -17,6 +20,7 @@
   --color-button-background: var(--primary); /* Bakgrundsfärg för knappar */
   --color-button-hover-background: #0c0fcc; /* Bakgrundsfärg för knappar vid hover */
 }
+
 
 body {
   line-height: 1.5; /* Sätter radavståndet för text */
@@ -73,11 +77,7 @@ button, .btn {
   }
 }
 
-
-
-
 .header {
-
   .header-area {
     display: flex; /* Lägger header-innehåll i en flexbox */
     justify-content: space-between; /* Låter elementen ligga på varsin sida */
@@ -92,20 +92,105 @@ button, .btn {
     }
   }
 }
-.darkmode {
-  --primary: #818cf8; /* Ändrad huvudfärg för mörkt läge */
+
+
+
+/* DARK MODE – via klass på <body> */
+body.darkMode {
+  --primary: #818cf8;
 
   --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
   --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
   --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
 
   --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
-  --color-button-background: #a5b4fc; /* Ljusare knappfärg för mörkt läge */
-  --color-button-hover-background: #818cf8; /* Ändrad knappfärg vid hover i mörkt läge */
+  --color-button-background: #a5b4fc; /* Ljusare knappbakgrund i mörkt läge */
+  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
 
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
 
   @media (width >= 768px) {
     display: block; /* Visar texten om skärmen är minst 768px bred */
   }
+}
+
+/* Smidig övergång för bakgrunds- och textfärger på hela sidan */
+html, body {
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+}
+
+/* ------------------------- script.js ---------------------------------*/
+
+/* Dark Mode ElementById*/
+/* Toggle-knappens grundstil */
+#darkModeToggle {
+  appearance: none; /* Tar bort standardutseendet för knappen */
+  -webkit-appearance: none; /* För webkit-baserade webbläsare */
+  border: 0; /* Tar bort standardramen */
+  background: #9b98b0; /* Grundfärg för knappen */
+  width: 46px; /* Bredd på knappen */
+  height: 24px; /* Storlek på knappen */
+  border-radius: 9999px; /* Gör knappen rundad */
+  position: relative; /* För att kunna positionera pseudo-elementet inuti */
+  cursor: pointer; /* Visar pekare vid hover */
+  padding: 0; /* Tar bort inre marginal */
+  outline: none; /* Tar bort standardfokusramen */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); /* Lätt inre skugga */
+  transition: background .2s ease, box-shadow .2s ease; /* Smidig övergång för bakgrund och skugga */
+}
+
+/* “knoppen” */
+#darkModeToggle::before {
+  content: ""; /* Nödvändigt för att pseudo-element ska visas */
+  position: absolute; /* Absolut positionering inom knappen */
+  top: 2px; /* Placering från toppen */
+  left: 2px; /* Placering från vänster */
+  width: 20px; /* Bredd på "knoppen" */
+  height: 20px; /* Höjd på "knoppen" */
+  background: #ffffff; /* Färg på "knoppen" */
+  border-radius: 50%; /* Gör "knoppen" rund */
+  box-shadow: 0 1px 2px rgba(0,0,0,.25); /* Lätt skugga för 3D-effekt */
+  transition: transform .2s ease; /* Smidig övergång för position */
+}
+
+/* Påslaget läge (knapp + “knoppen” flyttas) */
+#darkModeToggle.is-on {
+  background: var(--primary); /* Ändrar bakgrundsfärg när påslagen */
+}
+#darkModeToggle.is-on::before {
+  transform: translateX(24px); /* Flyttar "knoppen" till höger när påslagen */
+}
+
+/* Fokus (tangentbord) */
+#darkModeToggle:focus-visible {
+  box-shadow:
+    0 0 0 2px #fff, /* Vit ring runt */
+    0 0 0 4px rgba(99,102,241,.7); /* Blå ring runt */
+}
+
+/* DARK MODE – via klass på <body> */
+body.darkMode {
+  --primary: #818cf8; 
+
+  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
+  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
+  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
+
+  --color-button-text: #ffffff; /* Vit textfärg för knappar i mörkt läge */
+  --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
+  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
+}
+
+/* ------------------------- Dark Mode Toggle ---------------------------------*/
+
+.logoDark {
+  display: none; /* Döljer den mörka logotypen från början */
+}
+
+body.darkMode .logoLight {
+  display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
+}
+
+body.darkMode .logoDark {
+  display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
 }
