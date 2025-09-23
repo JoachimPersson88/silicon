@@ -74,7 +74,7 @@ Arbeta mobile-first med följande brytpunkter:
 - Tablet: ~768px  
 - Desktop: 1440px
 
-🔸 Steg 5: Dark/Light Theme
+🔹 Steg 5: Dark/Light Theme ✅
 
 1. Skapa CSS-variabler för färger, t.ex. --bg, --text, --primary.  
 2. Implementera en toggle-knapp i headern med JavaScript.  
