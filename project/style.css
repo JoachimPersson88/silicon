@@ -21,7 +21,7 @@
   --color-button-hover-background: #0c0fcc; /* Bakgrundsfärg för knappar vid hover */
 }
 
-
+/* Grundläggande stil för body-elementet */
 body {
   line-height: 1.5; /* Sätter radavståndet för text */
   background-color: #f4f4f4; /* Grundbakgrundsfärg (dubbeldefinierad men skrivs över nedan) */
@@ -32,10 +32,12 @@ body {
   background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
 }
 
+/* Grundläggande stil för rubriker (h1-h6) */
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading-text); /* Ger rubriker en specifik färg */
 }
 
+/* Grundläggande stil för knappar och element med klassen .btn */
 button, .btn {
   display: flex; /* Gör knappar till flexbox-containrar */
   justify-content: center; /* Centrerar innehåll horisontellt */
@@ -48,13 +50,25 @@ button, .btn {
   padding: 10px 20px; /* Inre marginal (top/bottom: 10px, left/right: 20px) */
   border-radius: 4px; /* Rundar hörnen på knappen */
   text-decoration: none; /* Tar bort understrykning om det är en länk */
-  transition: background 0.3s ease-in-out; /* Smidig övergång vid hover */
+  transition: background 0.15s ease-in-out; /* Smidig övergång vid hover */
 
   &:hover {
     background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
   }
+  
+  img {
+    height: 20px; /* Sätter en fast höjd för ikoner i knappar */
+    width: auto; /* Behåller proportionerna på ikoner */
+  }
 }
 
+/* Gör att bilder är responsiva och anpassar sig efter sin container */
+img {
+  width: 100%; /* Gör att bilder inte överstiger sin containers bredd */
+  height: auto; /* Behåller bildens proportioner */
+}
+
+/* Container för att centrera och begränsa bredden på innehållet */
 .container {
   width: 100%; /* Full bredd */
   max-width: 1320px; /* Maxbredd på innehållet */
@@ -90,27 +104,6 @@ button, .btn {
       align-items: center; /* Vertikal centrering */
       gap: 1rem; /* Mellanrum mellan elementen */
     }
-  }
-}
-
-
-
-/* DARK MODE – via klass på <body> */
-body.darkMode {
-  --primary: #818cf8;
-
-  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
-  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
-  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
-
-  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
-  --color-button-background: #a5b4fc; /* Ljusare knappbakgrund i mörkt läge */
-  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
-
-  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
-
-  @media (width >= 768px) {
-    display: block; /* Visar texten om skärmen är minst 768px bred */
   }
 }
 
@@ -168,21 +161,28 @@ html, body {
     0 0 0 4px rgba(99,102,241,.7); /* Blå ring runt */
 }
 
+/* ------------------------- Dark Mode Toggle ---------------------------------*/
+
 /* DARK MODE – via klass på <body> */
 body.darkMode {
-  --primary: #818cf8; 
+  --primary: #818cf8;
 
   --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
   --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
   --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
 
-  --color-button-text: #ffffff; /* Vit textfärg för knappar i mörkt läge */
+  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
   --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
   --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
+
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
 }
 
-/* ------------------------- Dark Mode Toggle ---------------------------------*/
-
+/* Logotypers grundstil */
 .logoDark {
   display: none; /* Döljer den mörka logotypen från början */
 }
@@ -193,4 +193,30 @@ body.darkMode .logoLight {
 
 body.darkMode .logoDark {
   display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
+}
+
+/* ------------------------- hero ---------------------------------*/
+
+.hero {
+background: #ffffff; /* Vit bakgrund för hero-sektionen */
+background: linear-gradient(178deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%) rgba(99, 102, 241, 0.07) 83%; /* Gradientbakgrund för hero-sektionen */
+padding-top: 4rem; /* Stort avstånd ovanför hero-innehållet */
+
+  .hero-area {
+  display: grid; /* Använder grid-layout för hero-sektionen */
+  grid-template-columns: 1fr; /* En kolumn layout som standard */
+  gap: 3rem; /* Mellanrum mellan grid-elementen */
+  text-align: center; /* Centrerar texten i hero-sektionen */
+
+  @media (width >= 768px) {
+    grid-template-columns: 1fr 1fr; /* Två kolumner layout för skärmar bredare än 768px */
+    gap: 3rem; /* Mellanrum mellan grid-elementen */
+    text-align: left; /* Vänsterjusterar texten i hero-sektionen */
+}
+  
+  .hero-content {
+  }
+  .hero-image {
+  } 
+}
 }
