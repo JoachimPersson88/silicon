@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /* Importerar Manrope-fonten från Google Fonts */
 
-/* ------------------------- index.html ---------------------------------*/
+/* ------------------------- body ---------------------------------*/
 
 /* Nollställer vissa standardinställningar för alla element samt deras pseudo-element (::before, ::after) */
 *, *::before, *::after {    
@@ -14,7 +14,7 @@
 
   --color-body-text: #565973; /* Textfärg för brödtext */
   --color-body-background: #f4f4f4; /* Bakgrundsfärg för sidan */
-  --color-heading-text: #0c0fcc; /* Textfärg för rubriker */
+  --color-heading-text: #000000; /* Textfärg för rubriker */
 
   --color-button-text: #ffffff; /* Textfärg för knappar */
   --color-button-background: var(--primary); /* Bakgrundsfärg för knappar */
@@ -55,7 +55,17 @@ button, .btn {
   &:hover {
     background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
   }
-  
+
+  /* Container för att centrera och begränsa bredden på innehållet */
+.container {
+  width: 100%; /* Full bredd */
+  max-width: 1320px; /* Maxbredd på innehållet */
+  margin-left: auto; /* Centrerar container horisontellt */
+  margin-right: auto; /* Centrerar container horisontellt */
+  padding-left: 1rem; /* Ger inre marginal till vänster */
+  padding-right: 1rem; /* Ger inre marginal till höger */
+}
+
   img {
     height: 20px; /* Sätter en fast höjd för ikoner i knappar */
     width: auto; /* Behåller proportionerna på ikoner */
@@ -68,28 +78,11 @@ img {
   height: auto; /* Behåller bildens proportioner */
 }
 
-/* Container för att centrera och begränsa bredden på innehållet */
-.container {
-  width: 100%; /* Full bredd */
-  max-width: 1320px; /* Maxbredd på innehållet */
-  margin-left: auto; /* Centrerar container horisontellt */
-  margin-right: auto; /* Centrerar container horisontellt */
-  padding-left: 1rem; /* Ger inre marginal till vänster */
-  padding-right: 1rem; /* Ger inre marginal till höger */
+/* Smidig övergång för bakgrunds- och textfärger på hela sidan */
+html, body {
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
 }
-
-.btn-signin-text {
-  display: none; /* Döljer texten från början */
-  button {
-    font-weight: 600; /* Gör texten i knappen lite fetare */
-    font-size: 16px; /* Sätter textstorleken i knappen */
-    line-height: 24px; /* Sätter radavståndet i knappen */
-    color: white; /* Sätter textfärgen i knappen till vit */
-  }
-  @media (width >= 768px) {
-    display: block; /* Visar texten om skärmen är minst 768px bred */
-  }
-}
+/* ------------------------- header ---------------------------------*/
 
 .header {
   .header-area {
@@ -107,9 +100,53 @@ img {
   }
 }
 
-/* Smidig övergång för bakgrunds- och textfärger på hela sidan */
-html, body {
+/* Specifik stil för knappar med klassen .btn-signin */
+.btn-signin-text {
+  display: none; /* Döljer texten från början */
+  button {
+    font-weight: 600; /* Gör texten i knappen lite fetare */
+    font-size: 16px; /* Sätter textstorleken i knappen */
+    line-height: 24px; /* Sätter radavståndet i knappen */
+    color: white; /* Sätter textfärgen i knappen till vit */
+  }
+  
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
+}
+
+/* ------------------------- Dark Mode Toggle ---------------------------------*/
+
+/* DARK MODE – via klass på <body> */
+body.darkMode {
+  --primary: #818cf8;
+
+  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
+  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
+  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
+
+  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
+  --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
+  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
+
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+
+  @media (width >= 768px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
+}
+
+/* Logotypers grundstil */
+.logoDark {
+  display: none; /* Döljer den mörka logotypen från början */
+}
+
+body.darkMode .logoLight {
+  display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
+}
+
+body.darkMode .logoDark {
+  display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
 }
 
 /* ------------------------- script.js ---------------------------------*/
@@ -161,62 +198,45 @@ html, body {
     0 0 0 4px rgba(99,102,241,.7); /* Blå ring runt */
 }
 
-/* ------------------------- Dark Mode Toggle ---------------------------------*/
 
-/* DARK MODE – via klass på <body> */
-body.darkMode {
-  --primary: #818cf8;
-
-  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
-  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
-  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
-
-  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
-  --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
-  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
-
-  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
-
-  @media (width >= 768px) {
-    display: block; /* Visar texten om skärmen är minst 768px bred */
-  }
-}
-
-/* Logotypers grundstil */
-.logoDark {
-  display: none; /* Döljer den mörka logotypen från början */
-}
-
-body.darkMode .logoLight {
-  display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
-}
-
-body.darkMode .logoDark {
-  display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
-}
 
 /* ------------------------- hero ---------------------------------*/
 
 .hero {
 background: #ffffff; /* Vit bakgrund för hero-sektionen */
 background: linear-gradient(178deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%) rgba(99, 102, 241, 0.07) 83%; /* Gradientbakgrund för hero-sektionen */
-padding-top: 4rem; /* Stort avstånd ovanför hero-innehållet */
+padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
 
   .hero-area {
-  display: grid; /* Använder grid-layout för hero-sektionen */
-  grid-template-columns: 1fr; /* En kolumn layout som standard */
-  gap: 3rem; /* Mellanrum mellan grid-elementen */
-  text-align: center; /* Centrerar texten i hero-sektionen */
-
-  @media (width >= 768px) {
-    grid-template-columns: 1fr 1fr; /* Två kolumner layout för skärmar bredare än 768px */
-    gap: 3rem; /* Mellanrum mellan grid-elementen */
-    text-align: left; /* Vänsterjusterar texten i hero-sektionen */
-}
+    display: grid; /* Använder grid-layout för hero-området */
+    grid-template-columns: 1fr; /* En kolumn-layout för hero-området */
+    gap: 3rem; /* Mellanrum mellan elementen i hero-området */
+    text-align: center; /* Centrerar texten i hero-området */
   
+  @media (width >= 768px) {    
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem; /* Större mellanrum mellan elementen på större skärmar */
+    text-align: left; /* Vänsterjusterar texten på större skärmar */
+  }
+
   .hero-content {
+    display: flex; /* Använder flexbox för hero-innehållet */
+    flex-direction: column; /* Staplar innehållet vertikalt */
+    gap: 2rem; /* Mellanrum mellan elementen i hero-innehållet */
+    
+    .hero-title {
+
+      font-size: 56px; /* Stor textstorlek för huvudrubriken */
+      font-weight: 800; /* Fet textvikt för huvudrubriken */
+  }
+
+    .hero-ingress {
+      font-size: 18px; /* Textstorlek för ingressen */
+      font-weight: 400; /* Normal textvikt för ingressen */
+    }
   }
   .hero-image {
+    
   } 
 }
 }
