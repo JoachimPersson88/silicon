@@ -13,7 +13,7 @@
   --primary: #6366F1; /* Huvudfärg, används som bas för knappar och andra element */
 
   --color-body-text: #565973; /* Textfärg för brödtext */
-  --color-body-background: #f4f4f4; /* Bakgrundsfärg för sidan */
+  --color-body-background: #ffffff; /* Bakgrundsfärg för sidan */
   --color-heading-text: #0b0f19; /* Textfärg för rubriker */
 
   --color-button-text: #ffffff; /* Textfärg för knappar */
@@ -28,13 +28,12 @@
 /* Grundläggande stil för body-elementet */
 body {
   line-height: 1.5; /* Sätter radavståndet för text */
-  background-color: #f4f4f4; /* Grundbakgrundsfärg (dubbeldefinierad men skrivs över nedan) */
+  background-color: #ffffff; /* Grundbakgrundsfärg (dubbeldefinierad men skrivs över nedan) */
   font-family: "Manrope", sans-serif; /* Använder Manrope som standardfont */
   font-style: normal; /* Standard textstil */
   font-weight: 400; /* Normal textvikt */
   color: var(--color-body-text); /* Textfärg från variabel */
   background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
-  background: linear-gradient(170deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%) rgba(99, 102, 241, 0.07) 83%; /* Gradientbakgrund för hero-sektionen */
 }
 
 /* Gör bilder responsiva */
@@ -46,7 +45,6 @@ img {
 /* Smidig övergång för bakgrunds- och textfärger på hela sidan */
 html, body {
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
-  
 }
 
 /* ------------------------- header ---------------------------------*/
@@ -101,6 +99,7 @@ button, .btn {
   margin-right: auto; /* Centrerar container horisontellt */
   padding-left: 1rem; /* Ger inre marginal till vänster */
   padding-right: 1rem; /* Ger inre marginal till höger */
+  
 }
 
   img {
@@ -130,11 +129,11 @@ button, .btn {
 body.darkMode {
   --primary: #818cf8;
 
-  --color-body-text: #e5e7eb; /* Ljusare textfärg för mörkt läge */
+  --color-body-text: #ffffff; /* Ljusare textfärg för mörkt läge */
   --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
   --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
 
-  --color-button-text: #0b0f1a; /* Mörk textfärg för knappar i mörkt läge */
+  --color-button-text: #ffffff; /* Mörk textfärg för knappar i mörkt läge */
   --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
   --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
 
@@ -211,6 +210,7 @@ body.darkMode .logoDark {
 
 .hero {
 padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
+background: linear-gradient(170deg, rgba(99, 102, 241, 0.01) 0%, rgba(218, 70, 239, 0.05) 99%) rgba(241, 244, 253, 0.07) 83% ; /* Gradientbakgrund för hero-sektionen */
 
 padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
 
@@ -260,7 +260,7 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
 
     }
         .hero-image {
-      display: none;
+      display: none; /* Döljer bilden från början */
       
       @media (width >= 768px) {
         display: block; /* Visar bilden på skärmar som är minst 768px breda */
@@ -312,3 +312,4 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
     }
   }
 }
+
