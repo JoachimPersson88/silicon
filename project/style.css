@@ -23,7 +23,6 @@
   --color-button-download-text: #ffffff; /* Textfärg för nedladdningsknappar */
   --color-button-download-background: #0b0f19; /* Bakgrundsfärg för nedladdningsknappar */
   --color-button-download-hover-backkground: #0b0f19; /* Bakgrundsfärg för nedladdningsknappar vid hover */
-
 }
 
 /* Grundläggande stil för body-elementet */
@@ -35,6 +34,7 @@ body {
   font-weight: 400; /* Normal textvikt */
   color: var(--color-body-text); /* Textfärg från variabel */
   background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%) rgba(99, 102, 241, 0.07) 83%; /* Gradientbakgrund för hero-sektionen */
 }
 
 /* Gör bilder responsiva */
@@ -46,6 +46,7 @@ img {
 /* Smidig övergång för bakgrunds- och textfärger på hela sidan */
 html, body {
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+  
 }
 
 /* ------------------------- header ---------------------------------*/
@@ -209,8 +210,6 @@ body.darkMode .logoDark {
 /* ------------------------- hero ---------------------------------*/
 
 .hero {
-background: #ffffff; /* Vit bakgrund för hero-sektionen */
-background: linear-gradient(178deg, rgba(255, 255, 255, 0.07) 0%, rgba(218, 70, 239, 0.05) 42%) rgba(99, 102, 241, 0.07) 83%; /* Gradientbakgrund för hero-sektionen */
 padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
 
 padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
@@ -218,7 +217,6 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
 @media (width >= 768px) {
   padding-bottom: 0; /* Tar bort avståndet under hero-innehållet på större skärmar */
 }
-
 
 .hero-area {
     display: grid; /* Använder grid-layout för hero-området */
@@ -250,7 +248,7 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
 
     .app-download-buttons {
       margin-top: 2rem; /* Avstånd ovanför nedladdningsknapparna */
-      display: grid; /* Använder grid-layout för knapparna */
+      display: flex; /* Använder grid-layout för knapparna */
       grid-template-columns: 210px 210px; /* Två kolumner med fast bredd för knapparna */
       align-items: center; /* Vertikal centrering av knapparna */
       justify-content: center; /* Horisontell centrering av knapparna */
