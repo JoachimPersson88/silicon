@@ -126,6 +126,12 @@ button, .btn {
   }
 }
 
+/* Specifik stil för knappar med klassen .btn-download */
+.app-download-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 /* ------------------------- Dark Mode Toggle ---------------------------------*/
 
 /* DARK MODE – via klass på <body> */
@@ -276,35 +282,14 @@ body.darkMode .logoDark {
 }
 }
 
-/* ------------------------- app-download-buttons ---------------------------------*/
-
-.app-download-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.store-badge {
-  display: inline-block;
-  line-height: 0;        /* tar bort extra whitespace runt bilder */
-}
-
-.store-badge img {
-  height: 48px;          /* lås höjd så badges inte “hoppar” */
-  width: auto;
-  display: block;
-}
-
-
-
-
 /* ------------------------- brands ---------------------------------*/
+
 .brands {
-padding: 40px 0; /* Avstånd ovanför och under brands-sektionen */  
+padding-top: 4rem; /* Stort avstånd ovanför brands-sektionen */
 background-color: var(--color-body-background); /* Bakgrundsfärg för brands-sektionen */}
+
   .brand-stack {
     display: block; /* Visar logotyperna */
     height: auto; /* Behåller proportionerna på logotyperna */
     margin-inline:auto; /* Centrerar logotyperna horisontellt */
-    
   }

@@ -19,7 +19,7 @@
 - Identifiera och dokumentera sektionerna (uppdatera vid behov):
   - Header ✔️
   - Hero ✔️
-  - Brands
+  - Brands ✔️
   - Features
   - How-Does-It-Work
   - App Features
@@ -35,7 +35,7 @@
 2. Identifiera sektionerna (VG kräver alla):  
     - Header ✔️ 
     - Hero  ✔️
-    - Brands  
+    - Brands ✔️  
     - Features  
     - How-Does-It-Work  
     - App Features  
@@ -51,7 +51,7 @@ För VG måste du använda olika brancher för sektionerna:
 
     - Header ✔️
     - Hero  ✔️
-    - Brands  
+    - Brands ✔️  
     - Features  
     - How-Does-It-Work  
     - App Features  
