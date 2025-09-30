@@ -47,6 +47,16 @@ html, body {
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
 }
 
+/* Container för att centrera och begränsa bredden på innehållet */
+.container {
+  width: 100%; /* Full bredd */
+  max-width: 1320px; /* Maxbredd på innehållet */
+  margin-left: auto; /* Centrerar container horisontellt */
+  margin-right: auto; /* Centrerar container horisontellt */
+  padding-left: 1rem; /* Ger inre marginal till vänster */
+  padding-right: 1rem; /* Ger inre marginal till höger */
+  
+}
 /* ------------------------- header ---------------------------------*/
 
 /* Grundläggande stil för rubriker (h1-h6) */
@@ -55,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
+  
   .header-area {
     display: flex; /* Lägger header-innehåll i en flexbox */
     justify-content: space-between; /* Låter elementen ligga på varsin sida */
@@ -92,15 +103,7 @@ button, .btn {
   }
 
   /* Container för att centrera och begränsa bredden på innehållet */
-.container {
-  width: 100%; /* Full bredd */
-  max-width: 1320px; /* Maxbredd på innehållet */
-  margin-left: auto; /* Centrerar container horisontellt */
-  margin-right: auto; /* Centrerar container horisontellt */
-  padding-left: 1rem; /* Ger inre marginal till vänster */
-  padding-right: 1rem; /* Ger inre marginal till höger */
-  
-}
+
 
   img {
     height: 20px; /* Sätter en fast höjd för ikoner i knappar */
@@ -313,3 +316,12 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
   }
 }
 
+.brands {
+padding: 40px 0; /* Avstånd ovanför och under brands-sektionen */  
+background-color: var(--color-body-background); /* Bakgrundsfärg för brands-sektionen */}
+  .brand-stack {
+    display: block; /* Visar logotyperna */
+    height: auto; /* Behåller proportionerna på logotyperna */
+    margin-inline:auto; /* Centrerar logotyperna horisontellt */
+    
+  }
