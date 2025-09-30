@@ -160,6 +160,7 @@ body.darkMode .logoDark {
   display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
 }
 
+
 /* ------------------------- script.js ---------------------------------*/
 
 /* Dark Mode ElementById*/
@@ -212,10 +213,11 @@ body.darkMode .logoDark {
 /* ------------------------- hero ---------------------------------*/
 
 .hero {
-padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
-background: linear-gradient(170deg, rgba(99, 102, 241, 0.01) 0%, rgba(218, 70, 239, 0.05) 99%) rgba(241, 244, 253, 0.07) 83% ; /* Gradientbakgrund för hero-sektionen */
+  padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
 
-padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
+  background:
+    linear-gradient(170deg, rgba(99,102,241,0.01) 0%, rgba(218,70,239,0.05) 99%),
+    var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
 
 @media (width >= 768px) {
   padding-bottom: 0; /* Tar bort avståndet under hero-innehållet på större skärmar */
@@ -234,6 +236,7 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
   }
 
   .hero-content {
+    padding-top: 2rem; /* Stort avstånd ovanför hero-innehållet */
     display: flex; /* Använder flexbox för hero-innehållet */
     flex-direction: column; /* Staplar innehållet vertikalt */
     gap: 2rem; /* Mellanrum mellan elementen i hero-innehållet */
@@ -275,47 +278,27 @@ padding-bottom: 5rem; /* Stort avstånd under hero-innehållet */
 
 /* ------------------------- app-download-buttons ---------------------------------*/
 
-.btn-download {
-      text-decoration: none; /* Tar bort understrykning om det är en länk */
-      display: inline-block; /* Gör att knappen beter sig som en inline-block */
-      border-radius: 10px; /* Rundar hörnen på knappen */
-      overflow: hidden; /* Döljer överflödigt innehåll som går utanför knappen */
-      text-align: center; /* Centrerar texten i knappen */
-
-  .btn-area {
-      padding: 10px 20px; /* Inre marginal för knappen */
-      display: grid; /* Använder grid-layout för texten */
-      column-gap: 1rem; /* Mellanrum mellan kolumnerna */
-      grid-template-columns: auto 1fr; /* Två kolumner: auto för ikonen, 1fr för texten */
-      grid-template-areas: "icon text" 
-                           "icon store"; /* Definierar områden för ikonen och texten */
-                          
-      background-color: var(--color-button-download-background); /* Bakgrundsfärg för nedladdningsknappen */
-      color : var(--color-button-download-text); /* Textfärg för nedladdningsknappen */
-      text-decoration: none; /* Tar bort understrykning om det är en länk */
-      font-size: 0.8rem;
-
-    .download-app-text {
-      grid-area: text;
-      font-weight: 600; /* Fetare textvikt för "Download on the"-texten */
-      font-size: 0.9rem;  /* Lite mindre textstorlek för "Download on the"-texten */
-      text-align: left; /* Vänsterjusterar texten */
-    }
-
-    .download-app-icon {
-      grid-area: icon;
-      height: 100%; /* Sätter ikonen att fylla hela höjden av sin grid-cell */
-    }
-
-    .download-app-store {
-      grid-area: store;
-      font-size: 1.5rem; /* Större textstorlek för "App Store"-texten */
-      font-weight: 600; /* Fetare textvikt för "App Store"-texten */
-      text-align: left; /* Vänsterjusterar texten */
-    }
-  }
+.app-download-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
+.store-badge {
+  display: inline-block;
+  line-height: 0;        /* tar bort extra whitespace runt bilder */
+}
+
+.store-badge img {
+  height: 48px;          /* lås höjd så badges inte “hoppar” */
+  width: auto;
+  display: block;
+}
+
+
+
+
+/* ------------------------- brands ---------------------------------*/
 .brands {
 padding: 40px 0; /* Avstånd ovanför och under brands-sektionen */  
 background-color: var(--color-body-background); /* Bakgrundsfärg för brands-sektionen */}
