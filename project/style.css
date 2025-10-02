@@ -65,8 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-  
-  .header-area {
+  .header-area { 
     display: flex; /* Lägger header-innehåll i en flexbox */
     justify-content: space-between; /* Låter elementen ligga på varsin sida */
     align-items: center; /* Vertikalt centrerade element */
@@ -102,9 +101,6 @@ button, .btn {
     background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
   }
 
-  /* Container för att centrera och begränsa bredden på innehållet */
-
-
   img {
     height: 20px; /* Sätter en fast höjd för ikoner i knappar */
     width: auto; /* Behåller proportionerna på ikoner */
@@ -132,6 +128,7 @@ button, .btn {
   gap: 12px;
   flex-wrap: wrap;
 }
+
 /* ------------------------- Dark Mode Toggle ---------------------------------*/
 
 /* DARK MODE – via klass på <body> */
@@ -147,15 +144,12 @@ body.darkMode {
   --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
 
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
-
-  @media (width >= 768px) {
-    display: block; /* Visar texten om skärmen är minst 768px bred */
-  }
 }
 
 /* Logotypers grundstil */
 .logoDark {
   display: none; /* Döljer den mörka logotypen från början */
+  
 }
 
 body.darkMode .logoLight {
@@ -220,7 +214,7 @@ body.darkMode .logoDark {
 
 .hero {
   padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
-
+  
   background:
     linear-gradient(170deg, rgba(99,102,241,0.01) 0%, rgba(218,70,239,0.05) 99%),
     var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
@@ -236,7 +230,7 @@ body.darkMode .logoDark {
     text-align: center; /* Centrerar texten i hero-området */
   
   @media (width >= 768px) {    
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
     gap: 6rem; /* Större mellanrum mellan elementen på större skärmar */
     text-align: left; /* Vänsterjusterar texten på större skärmar */
   }
@@ -260,7 +254,6 @@ body.darkMode .logoDark {
 
     .app-download-buttons {
       margin-top: 2rem; /* Avstånd ovanför nedladdningsknapparna */
-      display: flex; /* Använder grid-layout för knapparna */
       grid-template-columns: 210px 210px; /* Två kolumner med fast bredd för knapparna */
       align-items: center; /* Vertikal centrering av knapparna */
       justify-content: center; /* Horisontell centrering av knapparna */
@@ -284,12 +277,15 @@ body.darkMode .logoDark {
 
 /* ------------------------- brands ---------------------------------*/
 
-.brands {
-padding-top: 4rem; /* Stort avstånd ovanför brands-sektionen */
-background-color: var(--color-body-background); /* Bakgrundsfärg för brands-sektionen */}
+.brands .brands-area {
+  padding: 2rem 0;                  /* stabil top/bottom-spacing */
+  display: flex;                    /* centrera innehåll */
+  justify-content: center;
+  align-items: center;
+}
 
-  .brand-stack {
-    display: block; /* Visar logotyperna */
-    height: auto; /* Behåller proportionerna på logotyperna */
-    margin-inline:auto; /* Centrerar logotyperna horisontellt */
-  }
+.brands .brands-area img {
+  display: block;                   /* ta bort inline-gap */
+  height: 64px;                     /* LÅS höjden = ingen layout-shift */
+  width: auto;                      /* bevara proportioner */
+}
