@@ -291,34 +291,50 @@ body.darkMode .logoDark {
 }
 
 
-/* ----------------------- app-features --------------------------------*/
+/* ----------------------- app_features --------------------------------*/
 
-.app-features {
-
-
-.app-features-area {
-
+.app_features {
+  padding-top: 5rem; /* Stort avstånd ovanför app-features-innehållet */
   
+  background:
+    var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
+
+@media (width >= 768px) {
+  padding-bottom: 0;} /* Tar bort avståndet under app-features-innehållet på större skärmar */
+  
+  .app_features-area {
+    display: grid;
+    grid-template-columns: 1fr; /* En kolumn-layout för app-features-området */
+              
   @media (width >= 768px) {    
-
+    grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
+    gap: 6rem; /* Större mellanrum mellan elementen på större skärmar */
+    text-align: left; /* Vänsterjusterar texten på större skärmar */
   }
 
-  .app-features-content {
-  
-    .app-features-title {
-
-  }
-
-    .app-features-ingress {
-
+  .app_features-content {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    .app_features-ingress {
+      font-size: 18px; /* Textstorlek för ingressen */
+      font-weight: 400; /* Normal textvikt för ingressen */
     }
     
-    .app-features-icons {
-
-
+    .app_features-icons {
+      margin-top: 2rem; /* Avstånd ovanför nedladdningsknapparna */
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Två kolumner med fast bredd för knapparna */
     }
-        .app-features-image {
-
+    
+    .app_features-image {
+      display: none; /* Döljer bilden från början */
+      
+      @media (width >= 768px) {
+        display: block; /* Visar bilden på skärmar som är minst 768px breda */
+      }
     }
   }
 }
