@@ -149,7 +149,6 @@ body.darkMode {
 /* Logotypers grundstil */
 .logoDark {
   display: none; /* Döljer den mörka logotypen från början */
-  
 }
 
 body.darkMode .logoLight {
@@ -276,16 +275,52 @@ body.darkMode .logoDark {
 }
 
 /* ------------------------- brands ---------------------------------*/
-
-.brands .brands-area {
+.brands {
+    background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
+  
+  .brands-area {
   padding: 2rem 0;                  /* stabil top/bottom-spacing */
   display: flex;                    /* centrera innehåll */
   justify-content: center;
   align-items: center;
+  }
+  
+  img {
+  max-width: 100%; /* Gör att bilder inte överskrider sin containers bredd */
+  height: auto; /* Behåller bildens proportioner */}
 }
 
-.brands .brands-area img {
-  display: block;                   /* ta bort inline-gap */
-  height: 64px;                     /* LÅS höjden = ingen layout-shift */
-  width: auto;                      /* bevara proportioner */
+
+/* ----------------------- app-features --------------------------------*/
+
+.app-features {
+
+
+.app-features-area {
+
+  
+  @media (width >= 768px) {    
+
+  }
+
+  .app-features-content {
+  
+    .app-features-title {
+
+  }
+
+    .app-features-ingress {
+
+    }
+    
+    .app-features-icons {
+
+
+    }
+        .app-features-image {
+
+    }
+  }
 }
+}
+
