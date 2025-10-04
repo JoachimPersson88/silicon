@@ -241,7 +241,7 @@ body.darkMode .logoDark {
     gap: 2rem; /* Mellanrum mellan elementen i hero-innehållet */
     
     .hero-title {
-
+      
       font-size: 56px; /* Stor textstorlek för huvudrubriken */
       font-weight: 800; /* Fet textvikt för huvudrubriken */
   }
@@ -294,68 +294,68 @@ body.darkMode .logoDark {
 /* ----------------------- app_features --------------------------------*/
 
 .app_features {
-  padding: 3rem 0;
-  background: var(--color-body-background);
+  padding: 3rem 0; /* Stabil top/bottom-spacing */
+  background: var(--color-body-background); /* Bakgrundsfärg från variabel */
   
   .app_features-area {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    align-items: start;
+    display: grid; /* Använder grid-layout för app_features-området */
+    grid-template-columns: 1fr; /* En kolumn-layout för app_features-området */
+    gap: 1rem; /* Mellanrum mellan elementen i app_features-området */
+    align-items: start; /* Vertikal justering av elementen till toppen */
     @media (width >= 768px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
   }
 
   .app_features-heading {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--color-heading-text);
-    margin-bottom: 1rem;
+    font-size: 2rem; /* Stor textstorlek för rubriken */
+    font-weight: 800; /* Mycket fet textvikt för rubriken */
+    color: var(--color-heading-text); /* Färg för rubriken från variabel */
+    margin-bottom: 1rem; /* Avstånd under rubriken */
   }
 
   .app_features-ingress {
-    color: var(--color-body-text);
-    max-width: 640px;
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    color: var(--color-body-text); /* Färg för ingressen från variabel */
+    max-width: 640px; /* Maxbredd för ingressen */
+    font-size: 16px; /* Textstorlek för ingressen */
+    line-height: 1.6; /* Radavstånd för bättre läsbarhet */
+    margin-bottom: 2rem; /* Avstånd under ingressen */
   }
 }
 
 .app_features-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: grid; /* Använder grid-layout för funktionerna */
+  grid-template-columns: 1fr; /* En kolumn-layout för funktionerna */
   gap: 4rem;
   
   @media (width >= 768px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
   }
   
   .app_features-item {
-    display: grid;
-    grid-template-columns: 56px 1fr;
-    gap: 1rem;
-    align-items: start;
+    display: grid; /* Använder grid-layout för varje funktion */
+    grid-template-columns: 56px 1fr; /* Två kolumner: ikon och text */
+    gap: 1rem; /* Mellanrum mellan ikon och text */
+    align-items: start; /* Vertikal justering av elementen till toppen */
   }
 
   .app_features-icons {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    display: grid;
-    place-items: center;
+    width: 56px; /* Fast bredd för ikonen */
+    height: 56px; /* Fast höjd för ikonen */
+    border-radius: 12px; /* Rundar hörnen på ikonen */
+    display: grid; /* Använder grid-layout för ikonen */
+    place-items: center; /* Centrerar ikonen både horisontellt och vertikalt */
   }
 
   .app_features-title {
-    font-weight: 700;
-    color: var(--color-heading-text);
+    font-weight: 700; /* Fet textvikt för funktionsrubriken */
+    color: var(--color-heading-text); /* Färg för rubriken från variabel */
   }
 
   .app_features-text {
-    margin: 0;
-    color: var(--color-body-text);
-    font-size: 14px;
-    line-height: 1.6;
+    margin: 0; /* Tar bort standardmarginalen */
+    color: var(--color-body-text); /* Färg för texten från variabel */
+    font-size: 14px; /* Textstorlek för funktionsbeskrivningen */
+    line-height: 1.6; /* Radavstånd för bättre läsbarhet */
   }
 }
 }
