@@ -149,15 +149,16 @@ body.darkMode {
 /* Logotypers grundstil */
 .logoDark {
   display: none; /* Döljer den mörka logotypen från början */
-}
-
-body.darkMode .logoLight {
+  body.darkMode .logoLight {
   display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
 }
 
 body.darkMode .logoDark {
   display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
 }
+}
+
+
 
 
 /* ------------------------- script.js ---------------------------------*/
@@ -225,12 +226,11 @@ body.darkMode .logoDark {
 .hero-area {
     display: grid; /* Använder grid-layout för hero-området */
     grid-template-columns: 1fr; /* En kolumn-layout för hero-området */
-    gap: 3rem; /* Mellanrum mellan elementen i hero-området */
+    gap: 2rem; /* Mellanrum mellan elementen i hero-området */
     text-align: center; /* Centrerar texten i hero-området */
   
   @media (width >= 768px) {    
     grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
-    gap: 6rem; /* Större mellanrum mellan elementen på större skärmar */
     text-align: left; /* Vänsterjusterar texten på större skärmar */
   }
 
@@ -279,10 +279,10 @@ body.darkMode .logoDark {
     background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
   
   .brands-area {
-  padding: 2rem 0;                  /* stabil top/bottom-spacing */
-  display: flex;                    /* centrera innehåll */
-  justify-content: center;
-  align-items: center;
+  padding: 2rem 0; /* stabil top/bottom-spacing */
+  justify-content: center; /* Centrerar logotyper horisontellt */
+  display: flex; /* Använder flexbox för brands-området */
+  align-items: center; /* Vertikal centrering av logotyper */ 
   }
   
   img {
@@ -294,49 +294,78 @@ body.darkMode .logoDark {
 /* ----------------------- app_features --------------------------------*/
 
 .app_features {
-  padding-top: 5rem; /* Stort avstånd ovanför app-features-innehållet */
-  
-  background:
-    var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
-
-@media (width >= 768px) {
-  padding-bottom: 0;} /* Tar bort avståndet under app-features-innehållet på större skärmar */
+  padding: 3rem 0;
+  background: var(--color-body-background);
   
   .app_features-area {
     display: grid;
-    grid-template-columns: 1fr; /* En kolumn-layout för app-features-området */
-              
-  @media (width >= 768px) {    
-    grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
-    gap: 6rem; /* Större mellanrum mellan elementen på större skärmar */
-    text-align: left; /* Vänsterjusterar texten på större skärmar */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: start;
+    @media (width >= 768px) {
+      grid-template-columns: 1fr 1fr;
   }
 
-  .app_features-content {
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    
-    .app_features-ingress {
-      font-size: 18px; /* Textstorlek för ingressen */
-      font-weight: 400; /* Normal textvikt för ingressen */
-    }
-    
-    .app_features-icons {
-      margin-top: 2rem; /* Avstånd ovanför nedladdningsknapparna */
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* Två kolumner med fast bredd för knapparna */
-    }
-    
-    .app_features-image {
-      display: none; /* Döljer bilden från början */
-      
-      @media (width >= 768px) {
-        display: block; /* Visar bilden på skärmar som är minst 768px breda */
-      }
-    }
+  .app_features-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-heading-text);
+    margin-bottom: 1rem;
+  }
+
+  .app_features-ingress {
+    color: var(--color-body-text);
+    max-width: 640px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+}
+
+.app_features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  
+  @media (width >= 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .app_features-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .app_features-icons {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+  }
+
+  .app_features-title {
+    font-weight: 700;
+    color: var(--color-heading-text);
+  }
+
+  .app_features-text {
+    margin: 0;
+    color: var(--color-body-text);
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
 }
+
+
+
+
+
+
+
+
+
 
