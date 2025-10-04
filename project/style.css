@@ -321,6 +321,13 @@ body.darkMode .logoDark {
     margin-bottom: 2rem; /* Avstånd under ingressen */
   }
 }
+  .app_features-image {
+    display: none; /* Döljer bilden från början */
+    
+    @media (width >= 768px) {
+        display: block; /* Visar bilden på skärmar som är minst 768px breda */
+      }
+    }
 
 .app_features-grid {
   display: grid; /* Använder grid-layout för funktionerna */
