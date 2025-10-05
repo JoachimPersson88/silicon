@@ -129,6 +129,12 @@ button, .btn {
   flex-wrap: wrap;
 }
 
+/* Dölj *textnoden* i .actions på mobil genom att nollställa textstorleken */
+@media (width <= 390px) {
+  .header .actions {
+    font-size: 0; /* gömmer själva "Dark Mode"-texten */
+  }
+}
 /* ------------------------- Dark Mode Toggle ---------------------------------*/
 
 /* DARK MODE – via klass på <body> */

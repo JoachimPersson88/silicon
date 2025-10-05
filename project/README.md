@@ -22,7 +22,7 @@
   - Brands ✔️
   - Features
   - How-Does-It-Work
-  - App Features
+  - App Features ✔️
   - Testimonials
   - FAQ (Accordion)
   - Subscribe
@@ -31,14 +31,14 @@
 - Uppdatera analysen löpande under projektets gång.
 - Dokumentera eventuella designändringar eller tillägg.
 
-1. Öppna Silicon Design Template.fig i Figma.  
+1. Öppna Silicon Design Template.fig i Figma. (pågående) 
 2. Identifiera sektionerna (VG kräver alla):  
     - Header ✔️ 
     - Hero  ✔️
     - Brands ✔️  
     - Features  
     - How-Does-It-Work  
-    - App Features  
+    - App Features ✔️  
     - Testimonials  
     - FAQ (Accordion)  
     - Subscribe  
@@ -54,7 +54,7 @@ För VG måste du använda olika brancher för sektionerna:
     - Brands ✔️  
     - Features  
     - How-Does-It-Work  
-    - App Features  
+    - App Features ✔️
     - Testimonials  
     - FAQ (Accordion)  
     - Subscribe  
@@ -69,7 +69,7 @@ För VG måste du använda olika brancher för sektionerna:
 
 🔸 Steg 4: Responsiv Design
 
-Arbeta mobile-first med följande brytpunkter:  
+Arbeta mobile-first med följande brytpunkter: (pågående) 
 - Mobilvy: 375px  
 - Tablet: ~768px  
 - Desktop: 1440px
@@ -89,7 +89,7 @@ Arbeta mobile-first med följande brytpunkter:
   Byt färger globalt.  
   Ikon (måne/sol) för feedback.
 
-🔸 Steg 7: Versionshantering
+🔸 Steg 7: Versionshantering (pågående)
 
 - Varje sektion kodas på en egen branch.  
 - Commits ska vara tydliga och beskrivande, till exempel: "Add hero section" eller "Fix FAQ accordion bug".
