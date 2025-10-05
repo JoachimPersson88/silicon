@@ -287,7 +287,7 @@ body.darkMode .logoDark {
   }
 }
 
-/* ====== TABLET-LÄGE (391px–768px) ====== */
+/* ====== TABLET-LÄGE ====== */
 @media (width >= 391px) and (width <= 768px) {
 
   .hero {
@@ -470,6 +470,7 @@ body.darkMode .brands img.logoDark {
     
     @media (width >= 770px) {
         display: block; /* Visar bilden på skärmar som är minst 768px breda */
+        
       }
     }
 
@@ -510,4 +511,91 @@ body.darkMode .brands img.logoDark {
   }
 }
 }
+
+/* ------------------------- how (How Does It Work) ---------------------------------*/
+
+/* ====== MOBIL-LÄGE ====== */
+.how {
+  padding: 4rem 0; /* luft runt sektionen */
+  background: rgba(8, 0, 50, 0.05);
+  
+  .how-area {
+    display: grid; /* enkel grid */
+    grid-template-columns: 1fr; /* en kolumn i mobil */
+    gap: 2rem; /* mellanrum mellan blocken */
+    justify-items: center; /* centrera innehållet */
+    text-align: center; /* centrera text i mobil */
+}
+
+  .how-title {
+    font-size: 32px; /* rubrikstorlek mobil */
+    font-weight: 800; /* tung rubrik */
+    color: var(--color-heading-text);
+  }
+}
+
+.how-phones {
+  display: grid; /* grid för telefonerna */
+  grid-template-columns: 1fr; /* en telefon i mobil */
+  gap: 1.5rem; /* mellanrum mellan telefoner i mobil (om fler skulle synas) */
+  align-items: end; /* jämna nederkant visuellt */
+}
+
+.phone img {
+  display: block; /* ta bort inline-gap */
+  max-width: 280px; /* rimlig mobilbredd */
+  height: auto; /* behåll proportioner */
+}
+
+/* beskrivning under telefonerna */
+.how-description {
+  max-width: 560px; /* läsbar radlängd */
+  display: grid;
+  gap: 0.5rem;
+  
+  .how-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-heading-text);
+  }
+  
+  .how-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-body-text);
+  }
+}
+
+/* Dölj hjälpkolumner i mobil */
+.hide-mobile { display: none; }
+
+
+/* ====== DESKTOP-LÄGE ====== */
+@media (width >= 769px) {
+  .how {
+    padding: 6rem 0; /* mer luft på stora skärmar */
+  }
+
+  .how-area {
+    gap: 2rem;
+  }
+
+  .how-title {
+    font-size: 44px; /* desktop-rubrik */
+  }
+
+  .how-phones {
+    grid-template-columns: repeat(3, 1fr); /* tre i rad */
+    gap: 6rem; /* större mellanrum */
+  }
+
+  .phone img {
+    max-width: 100%;
+  }
+
+  .hide-mobile { display: block; } /* visa sidotelefoner */
+}
+
+
+
 
