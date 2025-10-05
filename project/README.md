@@ -21,7 +21,7 @@
   - Hero ✔️
   - Brands ✔️
   - Features
-  - How-Does-It-Work
+  - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text)
   - App Features ✔️
   - Testimonials
   - FAQ (Accordion)
@@ -37,7 +37,7 @@
     - Hero  ✔️
     - Brands ✔️  
     - Features  
-    - How-Does-It-Work  
+    - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text till alla vyer)
     - App Features ✔️  
     - Testimonials  
     - FAQ (Accordion)  
@@ -53,7 +53,7 @@ För VG måste du använda olika brancher för sektionerna:
     - Hero  ✔️
     - Brands ✔️  
     - Features  
-    - How-Does-It-Work  
+    - How-Does-It-Work ✔️ 
     - App Features ✔️
     - Testimonials  
     - FAQ (Accordion)  

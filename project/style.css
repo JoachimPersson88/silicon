@@ -569,6 +569,23 @@ body.darkMode .brands img.logoDark {
 /* Dölj hjälpkolumner i mobil */
 .hide-mobile { display: none; }
 
+/* ====== TABLET-LÄGE ====== */
+@media (width >= 391px) and (width <= 768px) {
+  .how-title {
+    font-size: 36px; /* större rubrik */
+  }
+
+  .how-phones {
+    grid-template-columns: repeat(3, 1fr); /* tre telefoner i rad */
+    gap: 0rem; /* trycker ihop telefonerna */
+  }
+
+  .phone img {
+    max-width: 220px; /* lite smalare på tablet */
+  }
+
+  .hide-mobile { display: block; } /* visa sidotelefoner */
+}
 
 /* ====== DESKTOP-LÄGE ====== */
 @media (width >= 769px) {
@@ -577,7 +594,7 @@ body.darkMode .brands img.logoDark {
   }
 
   .how-area {
-    gap: 2rem;
+    gap: 2rem; /* mellanrum */
   }
 
   .how-title {
@@ -590,7 +607,7 @@ body.darkMode .brands img.logoDark {
   }
 
   .phone img {
-    max-width: 100%;
+    max-width: 100%; /* största storlek */
   }
 
   .hide-mobile { display: block; } /* visa sidotelefoner */
