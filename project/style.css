@@ -117,7 +117,7 @@ button, .btn {
     color: white; /* Sätter textfärgen i knappen till vit */
   }
   
-  @media (width >= 768px) {
+  @media (width >= 770px) {
     display: block; /* Visar texten om skärmen är minst 768px bred */
   }
 }
@@ -144,11 +144,16 @@ body.darkMode {
   --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
 
   transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+
+
 }
 
 /* Logotypers grundstil */
 .logoDark {
   display: none; /* Döljer den mörka logotypen från början */
+
+}
+
   body.darkMode .logoLight {
   display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
 }
@@ -156,9 +161,6 @@ body.darkMode {
 body.darkMode .logoDark {
   display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
 }
-}
-
-
 
 
 /* ------------------------- script.js ---------------------------------*/
@@ -219,7 +221,7 @@ body.darkMode .logoDark {
     linear-gradient(170deg, rgba(99,102,241,0.01) 0%, rgba(218,70,239,0.05) 99%),
     var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
 
-@media (width >= 768px) {
+@media (width >= 770px) {
   padding-bottom: 0; /* Tar bort avståndet under hero-innehållet på större skärmar */
 }
 
@@ -229,7 +231,7 @@ body.darkMode .logoDark {
     gap: 2rem; /* Mellanrum mellan elementen i hero-området */
     text-align: center; /* Centrerar texten i hero-området */
   
-  @media (width >= 768px) {    
+  @media (width >= 770px) {    
     grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
     text-align: left; /* Vänsterjusterar texten på större skärmar */
   }
@@ -258,7 +260,7 @@ body.darkMode .logoDark {
       justify-content: center; /* Horisontell centrering av knapparna */
       gap: 1rem; /* Mellanrum mellan knapparna */
 
-      @media (width >= 768px) {
+      @media (width >= 770px) {
         justify-content: start; /* Vänsterjusterar knapparna på större skärmar */
       }
 
@@ -266,7 +268,8 @@ body.darkMode .logoDark {
         .hero-image {
       display: none; /* Döljer bilden från början */
       
-      @media (width >= 768px) {
+      
+      @media (width >= 770px) {
         display: block; /* Visar bilden på skärmar som är minst 768px breda */
       }
     }
@@ -275,21 +278,70 @@ body.darkMode .logoDark {
 }
 
 /* ------------------------- brands ---------------------------------*/
-.brands {
-    background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
-  
-  .brands-area {
-  padding: 2rem 0; /* stabil top/bottom-spacing */
-  justify-content: center; /* Centrerar logotyper horisontellt */
-  display: flex; /* Använder flexbox för brands-området */
-  align-items: center; /* Vertikal centrering av logotyper */ 
+
+/* ====== MOBIL-LÄGE ====== */
+@media (width <= 390px) {
+  .brands {
+    display: none;
   }
-  
-  img {
-  max-width: 100%; /* Gör att bilder inte överskrider sin containers bredd */
-  height: auto; /* Behåller bildens proportioner */}
 }
 
+/* ====== TABLET-LÄGE ====== */
+@media (width >= 391px) and (width <= 768px) {
+  .brands {
+    display: block;
+  }
+
+  .brands .brands-area {
+    display: grid; /* Använder grid-layout för brands-området */
+    grid-template-columns: repeat(4, 1fr); /* Fyra kolumner för logotyperna */
+    gap: 24px; /* Mellanrum mellan logotyperna */
+    justify-items: center; /* Centrerar logotyperna horisontellt */
+    align-items: center; /* Centrerar logotyperna vertikalt */
+  }
+
+  /* fick hjälp av chatGPT, detta är tydligen pseudo-class */
+  /* Dölj logo 5 & 6 */
+  .brands img:nth-of-type(9),
+  .brands img:nth-of-type(10),
+  .brands img:nth-of-type(11),
+  .brands img:nth-of-type(12) {
+    display: none;
+  }
+}
+
+/* ====== DESKTOP-LÄGE ====== */
+@media (width >= 769px) {
+  .brands {
+    display: block; /* Visa brands-sektionen på större skärmar */
+  }
+
+  .brands .brands-area {
+    display: grid; /* Använder grid-layout för brands-området */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px; /* Mellanrum mellan logotyperna */
+    justify-items: center; /* Centrerar logotyperna horisontellt */
+    align-items: center; /* Centrerar logotyperna vertikalt */
+  }
+
+  /* Visa alla loggor igen */
+  .brands img {
+    display: inline; /* Visa alla logotyper */
+  }
+}
+
+/* Temaväxling, endast för brands */
+.brands img.logoDark { 
+  display: none;                 /* dölj dark i ljust tema */
+}
+
+body.darkMode .brands img.logoLight { 
+  display: none;                 /* dölj light i mörkt tema */
+}
+
+body.darkMode .brands img.logoDark { 
+  display: inline;               /* visa dark i mörkt tema */
+}
 
 /* ----------------------- app_features --------------------------------*/
 
@@ -302,7 +354,7 @@ body.darkMode .logoDark {
     grid-template-columns: 1fr; /* En kolumn-layout för app_features-området */
     gap: 1rem; /* Mellanrum mellan elementen i app_features-området */
     align-items: start; /* Vertikal justering av elementen till toppen */
-    @media (width >= 768px) {
+    @media (width >= 770px) {
       grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
   }
 
@@ -324,7 +376,7 @@ body.darkMode .logoDark {
   .app_features-image {
     display: none; /* Döljer bilden från början */
     
-    @media (width >= 768px) {
+    @media (width >= 770px) {
         display: block; /* Visar bilden på skärmar som är minst 768px breda */
       }
     }
@@ -332,9 +384,9 @@ body.darkMode .logoDark {
 .app_features-grid {
   display: grid; /* Använder grid-layout för funktionerna */
   grid-template-columns: 1fr; /* En kolumn-layout för funktionerna */
-  gap: 4rem;
+  gap: 4rem; /* Mellanrum mellan funktionerna */
   
-  @media (width >= 768px) {
+  @media (width >= 770px) {
     grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
   }
   
