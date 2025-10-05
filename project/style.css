@@ -214,68 +214,152 @@ body.darkMode .logoDark {
 
 /* ------------------------- hero ---------------------------------*/
 
+/* ====== GEMENSAMT LÄGE ====== */
+/* Ljus bakgrund med svag gradient över sidans bakgrundsfärg */
 .hero {
-  padding-top: 5rem; /* Stort avstånd ovanför hero-innehållet */
-  
   background:
     linear-gradient(170deg, rgba(99,102,241,0.01) 0%, rgba(218,70,239,0.05) 99%),
-    var(--color-body-background); /* Bakgrund med gradient och färg från variabel */
-
-@media (width >= 770px) {
-  padding-bottom: 0; /* Tar bort avståndet under hero-innehållet på större skärmar */
+    var(--color-body-background);
 }
 
-.hero-area {
-    display: grid; /* Använder grid-layout för hero-området */
-    grid-template-columns: 1fr; /* En kolumn-layout för hero-området */
-    gap: 2rem; /* Mellanrum mellan elementen i hero-området */
-    text-align: center; /* Centrerar texten i hero-området */
-  
-  @media (width >= 770px) {    
-    grid-template-columns: 1fr 1fr; /* Två kolumner på större skärmar */
-    text-align: left; /* Vänsterjusterar texten på större skärmar */
+.hero .hero-area {
+  display: grid; /* Grid-layout för att kunna styra placering per breakpoint */
+  grid-template-columns: 1fr; /* En kolumn i basläget (mobil) */
+  gap: 2rem; /* Avstånd mellan grid-områden i mobil */
+  text-align: center; /* Centrera text i mobil */
+}
+
+.hero .hero-content {
+  padding-top: 2rem; /* Luft ovanför textinnehållet */
+  display: flex; /* Flex för att stapla rubrik, ingress och knappar */
+  flex-direction: column; /* Stapla vertikalt */
+  gap: 2rem; /* Avstånd mellan textblock och knappar i mobil */
+}
+
+.hero .hero-title {
+  font-size: 56px; /* Stor primärrubrik */
+  font-weight: 800; /* Extra fet stil för rubriken */
+}
+
+.hero .hero-ingress {
+  font-size: 18px; /* Standardstorlek för ingress */
+  font-weight: 400; /* Normal vikt */
+}
+
+.hero .app-download-buttons {
+  margin-top: 2rem; /* Luft ovanför knapparna */
+  display: grid; /* Grid för att lätt kunna byta layout i olika lägen */
+  grid-template-columns: 1fr; /* En kolumn i mobil (knapparna under varandra vid behov) */
+  gap: 1rem; /* Avstånd mellan knapparna */
+  justify-items: center; /* Centrera knappar i mobil */
+}
+
+.hero .hero-image {
+  display: none; /* Dölj telefonbild i mobil-läget */
+}
+
+/* ====== MOBIL-LÄGE (<= 390px) ====== */
+@media (width <= 390px) {
+  .hero .hero-title {
+    font-size: 34px; /* Mindre rubrik för små skärmar */
+    font-weight: 800; /* Behåll fet rubrik */
   }
 
-  .hero-content {
-    padding-top: 2rem; /* Stort avstånd ovanför hero-innehållet */
-    display: flex; /* Använder flexbox för hero-innehållet */
-    flex-direction: column; /* Staplar innehållet vertikalt */
-    gap: 2rem; /* Mellanrum mellan elementen i hero-innehållet */
-    
-    .hero-title {
-      
-      font-size: 56px; /* Stor textstorlek för huvudrubriken */
-      font-weight: 800; /* Fet textvikt för huvudrubriken */
+  .hero .hero-ingress {
+    font-size: 25px; /* Större ingress enligt din design */
+    font-weight: 400; /* Normal vikt */
   }
 
-    .hero-ingress {
-      font-size: 18px; /* Textstorlek för ingressen */
-      font-weight: 400; /* Normal textvikt för ingressen */
-    }
+  .hero .hero-image {
+    display: none; /* Säkerställ att bilden är dold på små mobiler */
+  }
 
-    .app-download-buttons {
-      margin-top: 2rem; /* Avstånd ovanför nedladdningsknapparna */
-      grid-template-columns: 210px 210px; /* Två kolumner med fast bredd för knapparna */
-      align-items: center; /* Vertikal centrering av knapparna */
-      justify-content: center; /* Horisontell centrering av knapparna */
-      gap: 1rem; /* Mellanrum mellan knapparna */
-
-      @media (width >= 770px) {
-        justify-content: start; /* Vänsterjusterar knapparna på större skärmar */
-      }
-
-    }
-        .hero-image {
-      display: none; /* Döljer bilden från början */
-      
-      
-      @media (width >= 770px) {
-        display: block; /* Visar bilden på skärmar som är minst 768px breda */
-      }
-    }
+  .hero .app-download-buttons {
+    grid-template-columns: 1fr; /* Knapparna staplas */
+    justify-items: center; /* Centrera knapparna */
+    padding-bottom: 5rem; /* Extra luft under knappar (matcha mockup) */
   }
 }
+
+/* ====== TABLET-LÄGE (391px–768px) ====== */
+@media (width >= 391px) and (width <= 768px) {
+
+  .hero {
+    padding-top: 2rem; /* Lite extra toppmarginal på tablet */
+  }
+
+  .hero .hero-area {
+    display: grid;               
+    /* Två jämna kolumner – OBS: 0fr kan kollapsa, 1fr ger förväntad layout */
+    grid-template-columns: 1fr 1fr;
+    /* Namngivna ytor: titel överst, sedan text + bild, och knappar + bild */
+    grid-template-areas:
+      "title   title"
+      "text    image"
+      "buttons image";
+    column-gap: 0rem; /* Ingen extra horisontell luft (matcha mockup) */
+    row-gap: 0rem; /* Ingen extra vertikal luft mellan raderna */
+    align-items: center; /* Vertikal centrering mot bildhöjd */
+  }
+
+  .hero .hero-content {
+    display: contents; /* “Platta” ut wrappern så barnen kan grid-as direkt */
+  }
+
+  .hero .hero-title {
+    grid-area: title; /* Lägg rubriken på första raden över båda kolumnerna */
+    text-align: center; /* Centrera rubriken på tablet */
+    font-size: 44px; /* Tablet-rubrikstorlek */
+  }
+
+  .hero .hero-ingress {
+    grid-area: text; /* Ingress i vänster kolumn */
+    text-align: left; /* Vänsterställ texten */
+    justify-self: start; /* Ankra mot vänsterkant */
+    margin: 0; /* Ingen extra luft runt (tight mot mockup) */
+  }
+
+  .hero .app-download-buttons {
+    grid-area: buttons; /* Knappar under ingress (vänster kolumn) */
+    display: grid; /* Grid för exakt knappbredd */
+    grid-template-columns: repeat(2, 160px); /* Placera två knappar bredvid varandra */
+    gap: 1rem; /* Avstånd mellan knapparna */
+    justify-items: start; /* Ankra knappar mot vänster */
+    justify-content: start; /* Ingen extra fördelning – håll dem till vänster */
+    margin: 0; /* Ta bort default-marginaler */
+  }
+
+  .hero .hero-image {
+    grid-area: image; /* Bilden i höger kolumn */
+    display: block; /* Visa bilden på tablet */
+  }
+
+  .hero .hero-image img {
+    display: block; /* Gör bilden till block (tar full bredd) */
+    max-width: 370px; /* Begränsa bredd på tablet enligt mockup-känsla */
+    height: auto; /* Behåll proportioner */
+  }
 }
+
+/* ====== DESKTOP-LÄGE (>= 769px) ====== */
+@media (width >= 769px) {
+  .hero .hero-area {
+    grid-template-columns: 1fr 1fr; /* Två lika kolumner på desktop */
+    align-items: center; /* Centrera vertikalt mot bilden */
+    text-align: left; /* Vänsterställ text på desktop */
+    padding-top: 5rem; /* Extra luft i toppen på större skärmar */
+  }
+
+  .hero .hero-image {
+    display: block; /* Visa bilden på desktop */
+  }
+
+  .hero .app-download-buttons {
+    grid-template-columns: repeat(2, 210px); /* Större knappbredd på desktop */
+    justify-content: start; /* Håll knapparna vänsterställda */
+  }
+}
+
 
 /* ------------------------- brands ---------------------------------*/
 
@@ -298,9 +382,10 @@ body.darkMode .logoDark {
     gap: 24px; /* Mellanrum mellan logotyperna */
     justify-items: center; /* Centrerar logotyperna horisontellt */
     align-items: center; /* Centrerar logotyperna vertikalt */
+    padding: 3rem;
   }
 
-  /* fick hjälp av chatGPT, detta är tydligen pseudo-class */
+  /* fick hjälp av chatGPT, detta är en pseudo-class som används för att styla om specifika element-rad utan att behöva bli nämnd som id eller klass*/
   /* Dölj logo 5 & 6 */
   .brands img:nth-of-type(9),
   .brands img:nth-of-type(10),
@@ -322,6 +407,7 @@ body.darkMode .logoDark {
     gap: 24px; /* Mellanrum mellan logotyperna */
     justify-items: center; /* Centrerar logotyperna horisontellt */
     align-items: center; /* Centrerar logotyperna vertikalt */
+    padding-top: 3rem;
   }
 
   /* Visa alla loggor igen */
@@ -330,17 +416,17 @@ body.darkMode .logoDark {
   }
 }
 
-/* Temaväxling, endast för brands */
+/* ====== DARK-LÄGE ====== */
 .brands img.logoDark { 
-  display: none;                 /* dölj dark i ljust tema */
+  display: none; /* dölj dark i ljust tema */
 }
 
 body.darkMode .brands img.logoLight { 
-  display: none;                 /* dölj light i mörkt tema */
+  display: none; /* dölj light i mörkt tema */
 }
 
 body.darkMode .brands img.logoDark { 
-  display: inline;               /* visa dark i mörkt tema */
+  display: inline; /* visa dark i mörkt tema */
 }
 
 /* ----------------------- app_features --------------------------------*/
@@ -418,13 +504,4 @@ body.darkMode .brands img.logoDark {
   }
 }
 }
-
-
-
-
-
-
-
-
-
 
