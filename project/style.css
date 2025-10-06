@@ -437,6 +437,7 @@ body.darkMode .brands img.logoDark {
 
 /* ----------------------- app_features --------------------------------*/
 
+/* ====== DESKTOP-LÄGE ====== */
 .app_features {
   padding: 3rem 0; /* Stabil top/bottom-spacing */
   background: var(--color-body-background); /* Bakgrundsfärg från variabel */
@@ -612,6 +613,81 @@ body.darkMode .brands img.logoDark {
 
   .hide-mobile { display: block; } /* visa sidotelefoner */
 }
+
+/* ------------------------- features ---------------------------------*/
+
+/* ====== DESKTOP-LÄGE ====== */
+.features {
+  padding: 3rem 0; /* Stabil top/bottom-spacing */
+  background: var(--color-body-background); /* Bakgrundsfärg från variabel */
+  
+  /* Yttre grid som lägger två features under varandra */
+  .features-area {
+    display: grid; /* Använder grid-layout för funktionerna */
+    grid-template-columns: 1fr; /* En kolumn-layout för funktionerna */
+    gap: 4rem; /* Mellanrum mellan funktionerna */
+    
+    /* Skärmupplösning */
+    @media (width >= 770px) {
+      grid-template-columns: 1fr; /* Två kolumner på större skärmar */
+    }
+  }
+
+  /* Grid för varje feature*/
+  .feature-item {
+    display: grid; /* intern grid */
+    grid-template-columns: 1fr 1fr; /* text 50% / bild 50% */
+    align-items: center; /* vertikal centrering mot bilden */
+    column-gap: 4rem; /* mellanrum mellan kolumner */
+  
+    /* Vänstra/högra innehållsboxen */
+    .feature-content {
+      display: grid; /* enklare vertikal stack */
+      gap: 1.25rem; /* avstånd mellan rubrik, text, knapp */
+    }
+
+    /* Rubrik */
+    .feature-title {
+      font-size: 28px;      /* rubrikstorlek */
+      font-weight: 800;     /* kraftig vikt */
+      color: var(--color-heading-text); /* rubrikfärg */
+    }
+  
+    /* Checklistan */
+    .feature-checklist {
+      list-style: circle;   /* inga default-bullets */
+      padding: 0;        /* nollställning */
+      margin: 0;/* nollställning */
+    }
+  }
+
+  /* Learn more knappen */
+  .btn {
+    background: var(--primary); /* bakgrund i primärfärg */
+    color: var(--color-button-text); /* vit text */
+    border-radius: .375rem; /* mjukt rundade hörn */
+    font-size: 14px; /* textstorlek */
+}
+
+  /* Bildcontainer i varje feature */
+  .feature-media {
+    display: grid; /* för enkel centrering */
+    justify-items: center; /* centrera bild */
+    
+    /* Själva feature-bilden */
+    .feature-media img {
+      max-width: 100%;  /* kan ej överstrida sin storlek */
+      height: auto;     /* behåller sina proportioner */
+    }
+  }
+}
+
+
+
+
+
+
+
 
 
 
