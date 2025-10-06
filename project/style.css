@@ -616,7 +616,7 @@ body.darkMode .brands img.logoDark {
 
 /* ------------------------- features ---------------------------------*/
 
-/* ====== DESKTOP-LÄGE ====== */
+/* Bas */
 .features {
   padding: 3rem 0; /* Stabil top/bottom-spacing */
   background: var(--color-body-background); /* Bakgrundsfärg från variabel */
@@ -624,49 +624,57 @@ body.darkMode .brands img.logoDark {
   /* Yttre grid som lägger två features under varandra */
   .features-area {
     display: grid; /* Använder grid-layout för funktionerna */
-    grid-template-columns: 1fr; /* En kolumn-layout för funktionerna */
+    grid-template-columns: 1fr ; /* 1 column med storlek 1frame*/
     gap: 4rem; /* Mellanrum mellan funktionerna */
-    
-    /* Skärmupplösning */
-    @media (width >= 770px) {
-      grid-template-columns: 1fr; /* Två kolumner på större skärmar */
-    }
   }
 
   /* Grid för varje feature*/
   .feature-item {
     display: grid; /* intern grid */
-    grid-template-columns: 1fr 1fr; /* text 50% / bild 50% */
+    grid-template-columns: 1fr 1fr; /* 2 columner med storlek 1frame*/
     align-items: center; /* vertikal centrering mot bilden */
-    column-gap: 4rem; /* mellanrum mellan kolumner */
   
     /* Vänstra/högra innehållsboxen */
     .feature-content {
-      display: grid; /* enklare vertikal stack */
-      gap: 1.25rem; /* avstånd mellan rubrik, text, knapp */
+      gap: 1.5rem; /* avstånd mellan rubrik, text, knapp */
+      max-width: 355px;                        
     }
 
     /* Rubrik */
     .feature-title {
-      font-size: 28px;      /* rubrikstorlek */
-      font-weight: 800;     /* kraftig vikt */
       color: var(--color-heading-text); /* rubrikfärg */
+      font-size: 28px; /* rubrikstorlek */
+      font-weight: 800; /* tjocklek */
     }
   
     /* Checklistan */
     .feature-checklist {
-      list-style: circle;   /* inga default-bullets */
-      padding: 0;        /* nollställning */
-      margin: 0;/* nollställning */
+      list-style-image: url('../project/assets_light/symbols/check\ symbol.svg'); 
+      padding: 20px 0px 30px 25px; /* mellanrum på alla håll */
     }
   }
 
   /* Learn more knappen */
-  .btn {
-    background: var(--primary); /* bakgrund i primärfärg */
-    color: var(--color-button-text); /* vit text */
-    border-radius: .375rem; /* mjukt rundade hörn */
-    font-size: 14px; /* textstorlek */
+  .btn-learn-more {
+  display: inline-flex;                /* låt bredden följa innehållet */
+  align-items: center;                 /* vertikalt centrerad text + ikon */
+  gap: 20px;                           /* avstånd mellan text och ikon */
+
+  color: var(--color-button-text);     /* textfärg */
+  background-color: var(--color-button-background);
+  padding: 15px 40px;
+  border-radius: 8px;
+  transition: background .15s ease-in-out;
+  
+  .right_arrow {
+  width: 16px;
+  height: 16px;
+}
+
+    &:hover {
+    background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
+  }
+
 }
 
   /* Bildcontainer i varje feature */
