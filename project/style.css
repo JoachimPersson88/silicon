@@ -772,9 +772,51 @@ body.darkMode .brands img.logoDark {
 .faq {
   padding: 5rem 0; /* Stabil top/bottom-spacing */
   background: var(--color-body-background); /* Bakgrundsfärg från variabel */
+
   .faq-area {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+
+  }
+  /* Grid*/
+  .faq-grid {
+    display: grid; /* intern grid */
+    grid-template-columns: 1fr; /* två columner bredvid varandra */
+    
+    /* Rubrik */
+    .faq-title {
+      color: var(--color-heading-text); /* rubrikfärg */
+      font-size: 32px; /* rubrikstorlek */
+      font-weight: 800; /* tjocklek */
+    }
+
+    /* innehåll */
+    .faq-ingress {
+      color: var(--color-heading-text); /* färg */
+      font-size: 18px; /* textstorlek */
+    }
+
+    .faq-item {
+      display: grid;
+          grid-template-columns: 1fr 1fr; /* två columner bredvid varandra */
+
+      margin-top: 1rem; /* avstånd från topp */
+    }
+    
+    .faq-icon2 {
+      margin-left: 10px;
+    }
+
+    .faq-text {
+      color: var(--color-body-text);
+      font-size: 14px;
+      margin: 10px 0 30px 0;
+    }
+    /* frågelistan */
+    .faq-list {
+      list-style-image: url('../project/assets_light/symbols/check\ symbol.svg'); 
+      padding: 20px 0 30px 25px; /* mellanrum på alla håll */
+    }
   }
 }
 
