@@ -768,7 +768,15 @@ body.darkMode .brands img.logoDark {
 
 /* ------------------------- faq ---------------------------------*/
 
-
+/* Bas */
+.faq {
+  padding: 5rem 0; /* Stabil top/bottom-spacing */
+  background: var(--color-body-background); /* Bakgrundsfärg från variabel */
+  .faq-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
 
 
