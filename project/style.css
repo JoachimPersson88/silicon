@@ -620,23 +620,20 @@ body.darkMode .brands img.logoDark {
 .features {
   padding: 5rem 0; /* Stabil top/bottom-spacing */
   background: var(--color-body-background); /* Bakgrundsfärg från variabel */
-
+  
   /* Yttre grid som lägger två features under varandra */
   .features-area {
     display: grid; /* Använder grid-layout för funktionerna */
     gap: 4rem; /* Mellanrum mellan funktionerna */
   }
-
+  
   /* Grid för varje feature*/
   .feature-item {
     display: grid; /* intern grid */
     grid-template-columns: 1.5fr 1fr; /* 2 columner med storlek 1frame*/
     align-items: center; /* vertikal centrering mot bilden */
-        justify-items: center; /* centrera bild */
-
-  
-    /* Vänstra/högra innehållsboxen */
- 
+    justify-items: center; /* centrera bild */
+    
     /* Rubrik */
     .feature-title {
       color: var(--color-heading-text); /* rubrikfärg */
@@ -652,8 +649,8 @@ body.darkMode .brands img.logoDark {
     
     .feature-icons {
       display: grid;
-      grid-template-columns: 1fr 1fr;      /* två kort bredvid varandra */
-      margin-top: 1rem;                 /* liten luft från rubriken */
+      grid-template-columns: 1fr 1fr; /* två kort bredvid varandra */
+      margin-top: 1rem; /* liten luft från rubriken */
     }
     
     .feature-icon2 {
@@ -702,6 +699,61 @@ body.darkMode .brands img.logoDark {
     padding-left: 150px;
   }
 }
+
+/* ------------------------- testimonials ---------------------------------*/
+
+/* Bas */
+.testimonials {
+  background: var(--color-body-background);
+  padding: 5rem 0;
+}
+
+/* Innehåll */
+.testimonials-area {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: start;
+  gap: 4rem;
+}
+
+/* vänster kolumn rubrik */
+.testimonials-title {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-heading-text);
+}
+
+/* Höger kolumn grid */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1rem;
+  align-items: start;
+}
+
+/* utlåtande */
+.testimonials-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 24px;
+  border: 4px solid rgba(11, 15, 25, 0.06);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
