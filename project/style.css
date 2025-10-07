@@ -630,7 +630,7 @@ body.darkMode .brands img.logoDark {
   /* Grid för varje feature*/
   .feature-item {
     display: grid; /* intern grid */
-    grid-template-columns: 0.5fr 1fr; /* 2 columner med storlek 1frame*/
+    grid-template-columns: 1.5fr 1fr; /* 2 columner med storlek 1frame*/
     align-items: center; /* vertikal centrering mot bilden */
         justify-items: center; /* centrera bild */
 
@@ -656,6 +656,10 @@ body.darkMode .brands img.logoDark {
       margin-top: 1rem;                 /* liten luft från rubriken */
     }
     
+    .feature-icon2 {
+      margin-left: 10px;
+    }
+
     .feature-text {
       color: var(--color-body-text);
       font-size: 14px;
@@ -695,6 +699,7 @@ body.darkMode .brands img.logoDark {
   .feature-media2 {
     display: grid; /* för enkel centrering */
     justify-items: center; /* centrera bild */
+    padding-left: 150px;
   }
 }
 
