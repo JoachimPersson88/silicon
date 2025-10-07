@@ -775,14 +775,17 @@ body.darkMode .brands img.logoDark {
 
   .faq-area {
     display: grid;
-        grid-template-columns: 1fr 1fr;
-
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
   }
+
   /* Grid*/
-  .faq-grid {
+  .faq-area-grid {
     display: grid; /* intern grid */
     grid-template-columns: 1fr; /* två columner bredvid varandra */
-    
+    gap: 1.2rem;
+   
     /* Rubrik */
     .faq-title {
       color: var(--color-heading-text); /* rubrikfärg */
@@ -794,24 +797,32 @@ body.darkMode .brands img.logoDark {
     .faq-ingress {
       color: var(--color-heading-text); /* färg */
       font-size: 18px; /* textstorlek */
+      max-width: 440px;
+    }
+    
+    .faq-item-grid {
+      display: grid; /* intern grid */
+      grid-template-columns: 1fr 1fr; /* två columner bredvid varandra */
+      gap: 1.2rem;
     }
 
     .faq-item {
       display: grid;
-          grid-template-columns: 1fr 1fr; /* två columner bredvid varandra */
-
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid rgba(11,15,25,.08);
+      border-radius: 12px;
+      padding: 16px;
       margin-top: 1rem; /* avstånd från topp */
-    }
-    
-    .faq-icon2 {
-      margin-left: 10px;
     }
 
     .faq-text {
-      color: var(--color-body-text);
+      color: var(--color-heading-text);
       font-size: 14px;
-      margin: 10px 0 30px 0;
+      font-weight: 600;
     }
+
     /* frågelistan */
     .faq-list {
       list-style-image: url('../project/assets_light/symbols/check\ symbol.svg'); 
