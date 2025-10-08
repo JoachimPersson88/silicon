@@ -13,7 +13,7 @@
 7. Bestäm om du vill använda Tailwind eller Bootstrap (frivilligt).  
   Annars kör du med ren HTML/CSS/JS. ✔️
 
-🔸 Steg 2: Designanalys (pågående)
+🔹 Steg 2: Designanalys (pågående) ✅
 
 - Gå igenom Silicon Design Template.fig i Figma.
 - Identifiera och dokumentera sektionerna (uppdatera vid behov):
@@ -26,7 +26,7 @@
   - Testimonials ✔️
   - FAQ (Accordion) ✔️
   - Subscribe ✔️
-  - Footer
+  - Footer ✔️
 - Notera och analysera färger, typsnitt, spacing, knappar etc.
 - Uppdatera analysen löpande under projektets gång.
 - Dokumentera eventuella designändringar eller tillägg.
@@ -42,7 +42,7 @@
     - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
     - FAQ ✔️ (Accordion) (funktionaliteten i accordion saknas, nu är den bara visuell )  
     - Subscribe ✔️ (email-inputen saknar ikon och subscribe knappen saknar funktion) 
-    - Footer  
+    - Footer ✔️  
     Notera färger, typsnitt, spacing, knappar etc.
 
 🔸 Steg 3: Kodstruktur & Branch-strategi (pågående)
@@ -58,7 +58,7 @@ För VG måste du använda olika brancher för sektionerna:
     - Testimonials  
     - FAQ (Accordion)  
     - Subscribe  
-    - Footer  
+    - Footer ✔️  
 
 **Arbetsflöde:**  
 1. Skapa branch  

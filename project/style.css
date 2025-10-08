@@ -930,3 +930,16 @@ body.darkMode .brands img.logoDark {
     }
   }
 }
+
+/* ------------------------- footer ---------------------------------*/
+
+.footer {
+  background: var(--color-body-background);
+  padding: 1.5rem 0;
+  
+  .footer-area {
+    color: rgba(147, 151, 173, 1);
+    font-size: 14px;
+    text-align: center;
+  }
+}
