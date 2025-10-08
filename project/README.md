@@ -23,9 +23,9 @@
   - Features ✔️ (Behöver mer kärlek och har ej fått egen branch)
   - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text)
   - App Features ✔️
-  - Testimonials
-  - FAQ (Accordion)
-  - Subscribe
+  - Testimonials ✔️
+  - FAQ (Accordion) ✔️
+  - Subscribe ✔️
   - Footer
 - Notera och analysera färger, typsnitt, spacing, knappar etc.
 - Uppdatera analysen löpande under projektets gång.
@@ -38,10 +38,10 @@
     - Brands ✔️  
     - Features ✔️ (Behöver mer kärlek och har ej fått egen branch)
     - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text till alla vyer)
-    - App Features ✔️  
-    - Testimonials  
-    - FAQ (Accordion)  
-    - Subscribe  
+    - App Features ✔️ (Behöver bättre styling överlag) 
+    - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
+    - FAQ ✔️ (Accordion) (funktionaliteten i accordion saknas, nu är den bara visuell )  
+    - Subscribe ✔️ (email-inputen saknar ikon och subscribe knappen saknar funktion) 
     - Footer  
     Notera färger, typsnitt, spacing, knappar etc.
 
