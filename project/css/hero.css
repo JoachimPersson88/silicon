@@ -6,75 +6,76 @@
   background:
     linear-gradient(170deg, rgba(99,102,241,0.01) 0%, rgba(218,70,239,0.05) 99%),
     var(--color-body-background);
-}
+    
+    .hero-area {
+      display: grid; /* Grid-layout för att kunna styra placering per breakpoint */
+      grid-template-columns: 1fr; /* En kolumn i basläget (mobil) */
+      gap: 2rem; /* Avstånd mellan grid-områden i mobil */
+      text-align: center; /* Centrera text i mobil */
+    }
+    
+    .hero-content {
+      padding-top: 2rem; /* Luft ovanför textinnehållet */
+      display: flex; /* Flex för att stapla rubrik, ingress och knappar */
+      flex-direction: column; /* Stapla vertikalt */
+      gap: 2rem; /* Avstånd mellan textblock och knappar i mobil */
+    }
+    
+    .hero-title {
+      font-size: 56px; /* Stor primärrubrik */
+      font-weight: 800; /* Extra fet stil för rubriken */
+    }
 
-.hero .hero-area {
-  display: grid; /* Grid-layout för att kunna styra placering per breakpoint */
-  grid-template-columns: 1fr; /* En kolumn i basläget (mobil) */
-  gap: 2rem; /* Avstånd mellan grid-områden i mobil */
-  text-align: center; /* Centrera text i mobil */
-}
+    .hero-ingress {
+      font-size: 18px; /* Standardstorlek för ingress */
+      font-weight: 400; /* Normal vikt */
+    }
 
-.hero .hero-content {
-  padding-top: 2rem; /* Luft ovanför textinnehållet */
-  display: flex; /* Flex för att stapla rubrik, ingress och knappar */
-  flex-direction: column; /* Stapla vertikalt */
-  gap: 2rem; /* Avstånd mellan textblock och knappar i mobil */
-}
+    .app-download-buttons {
+      margin-top: 2rem; /* Luft ovanför knapparna */
+      display: grid; /* Grid för att lätt kunna byta layout i olika lägen */
+      grid-template-columns: 1fr; /* En kolumn i mobil (knapparna under varandra vid behov) */
+      gap: 1rem; /* Avstånd mellan knapparna */
+      justify-items: center; /* Centrera knappar i mobil */
+    }
 
-.hero .hero-title {
-  font-size: 56px; /* Stor primärrubrik */
-  font-weight: 800; /* Extra fet stil för rubriken */
-}
-
-.hero .hero-ingress {
-  font-size: 18px; /* Standardstorlek för ingress */
-  font-weight: 400; /* Normal vikt */
-}
-
-.hero .app-download-buttons {
-  margin-top: 2rem; /* Luft ovanför knapparna */
-  display: grid; /* Grid för att lätt kunna byta layout i olika lägen */
-  grid-template-columns: 1fr; /* En kolumn i mobil (knapparna under varandra vid behov) */
-  gap: 1rem; /* Avstånd mellan knapparna */
-  justify-items: center; /* Centrera knappar i mobil */
-}
-
-.hero .hero-image {
-  display: none; /* Dölj telefonbild i mobil-läget */
-}
-
-/* ====== MOBIL-LÄGE (<= 390px) ====== */
-@media (width <= 390px) {
-  .hero .hero-title {
-    font-size: 34px; /* Mindre rubrik för små skärmar */
-    font-weight: 800; /* Behåll fet rubrik */
+    .hero-image {
+      display: none; /* Dölj telefonbild i mobil-läget */
+    }
   }
+  
+  /* ====== MOBIL-LÄGE (<= 390px) ====== */
+  @media (width <= 390px) {
+    
+    .hero-title {
+      font-size: 34px; /* Mindre rubrik för små skärmar */
+      font-weight: 800; /* Behåll fet rubrik */
+    }
 
-  .hero .hero-ingress {
-    font-size: 25px; /* Större ingress enligt din design */
-    font-weight: 400; /* Normal vikt */
-  }
+    .hero-ingress {
+      font-size: 25px; /* Större ingress enligt din design */
+      font-weight: 400; /* Normal vikt */
+    }
 
-  .hero .hero-image {
-    display: none; /* Säkerställ att bilden är dold på små mobiler */
-  }
+    .hero-image {
+      display: none; /* Säkerställ att bilden är dold på små mobiler */
+    }
 
-  .hero .app-download-buttons {
-    grid-template-columns: 1fr; /* Knapparna staplas */
-    justify-items: center; /* Centrera knapparna */
-    padding-bottom: 5rem; /* Extra luft under knappar (matcha mockup) */
+    .app-download-buttons {
+      grid-template-columns: 1fr; /* Knapparna staplas */
+      justify-items: center; /* Centrera knapparna */
+      padding-bottom: 5rem; /* Extra luft under knappar (matcha mockup) */
+    }
   }
-}
 
 /* ====== TABLET-LÄGE ====== */
 @media (width >= 391px) and (width <= 768px) {
-
+  
   .hero {
     padding-top: 2rem; /* Lite extra toppmarginal på tablet */
   }
 
-  .hero .hero-area {
+  .hero-area {
     display: grid;               
     /* Två jämna kolumner – OBS: 0fr kan kollapsa, 1fr ger förväntad layout */
     grid-template-columns: 1fr 1fr;
@@ -88,7 +89,7 @@
     align-items: center; /* Vertikal centrering mot bildhöjd */
   }
 
-  .hero .hero-content {
+  .hero-content {
     display: contents; /* “Platta” ut wrappern så barnen kan grid-as direkt */
   }
 
@@ -98,14 +99,14 @@
     font-size: 44px; /* Tablet-rubrikstorlek */
   }
 
-  .hero .hero-ingress {
+  .hero-ingress {
     grid-area: text; /* Ingress i vänster kolumn */
     text-align: left; /* Vänsterställ texten */
     justify-self: start; /* Ankra mot vänsterkant */
     margin: 0; /* Ingen extra luft runt (tight mot mockup) */
   }
 
-  .hero .app-download-buttons {
+  .app-download-buttons {
     grid-area: buttons; /* Knappar under ingress (vänster kolumn) */
     display: grid; /* Grid för exakt knappbredd */
     grid-template-columns: repeat(2, 160px); /* Placera två knappar bredvid varandra */
@@ -115,12 +116,12 @@
     margin: 0; /* Ta bort default-marginaler */
   }
 
-  .hero .hero-image {
+  .hero-image {
     grid-area: image; /* Bilden i höger kolumn */
     display: block; /* Visa bilden på tablet */
   }
 
-  .hero .hero-image img {
+  .hero-image img {
     display: block; /* Gör bilden till block (tar full bredd) */
     max-width: 370px; /* Begränsa bredd på tablet enligt mockup-känsla */
     height: auto; /* Behåll proportioner */
@@ -129,18 +130,19 @@
 
 /* ====== DESKTOP-LÄGE (>= 769px) ====== */
 @media (width >= 769px) {
-  .hero .hero-area {
+  
+  .hero-area {
     grid-template-columns: 1fr 1fr; /* Två lika kolumner på desktop */
     align-items: center; /* Centrera vertikalt mot bilden */
     text-align: left; /* Vänsterställ text på desktop */
     padding-top: 5rem; /* Extra luft i toppen på större skärmar */
   }
 
-  .hero .hero-image {
+  .hero-image {
     display: block; /* Visa bilden på desktop */
   }
 
-  .hero .app-download-buttons {
+  .app-download-buttons {
     grid-template-columns: repeat(2, 210px); /* Större knappbredd på desktop */
     justify-content: start; /* Håll knapparna vänsterställda */
   }
