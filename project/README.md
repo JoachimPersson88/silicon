@@ -20,7 +20,7 @@
   - Header ✔️
   - Hero ✔️
   - Brands ✔️
-  - Features ✔️ (Behöver mer kärlek och har ej fått egen branch)
+  - Features ✔️
   - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text)
   - App Features ✔️
   - Testimonials ✔️
@@ -36,7 +36,7 @@
     - Header ✔️ 
     - Hero  ✔️
     - Brands ✔️  
-    - Features ✔️ (Behöver mer kärlek och har ej fått egen branch)
+    - Features ✔️
     - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text till alla vyer)
     - App Features ✔️ (Behöver bättre styling överlag) 
     - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
@@ -52,7 +52,7 @@ För VG måste du använda olika brancher för sektionerna:
     - Header ✔️
     - Hero  ✔️
     - Brands ✔️  
-    - Features (Behöver mer kärlek och har ej fått egen branch)
+    - Features ✔️
     - How-Does-It-Work ✔️ 
     - App Features ✔️
     - Testimonials  
