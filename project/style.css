@@ -637,8 +637,8 @@ body.darkMode .brands img.logoDark {
     /* Rubrik */
     .feature-title {
       color: var(--color-heading-text); /* rubrikfärg */
-      font-size: 28px; /* rubrikstorlek */
-      font-weight: 800; /* tjocklek */
+      font-size: 32px; /* rubrikstorlek */
+      font-weight: 900; /* tjocklek */
     }
 
     /* Checklistan */
@@ -658,8 +658,8 @@ body.darkMode .brands img.logoDark {
     }
 
     .feature-text {
-      color: var(--color-body-text);
-      font-size: 14px;
+      color: rgba(86, 89, 115, 1);
+      font-size: 16px;
       margin: 10px 0 30px 0;
     }
   }
