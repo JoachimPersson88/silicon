@@ -1,0 +1,106 @@
+/* ------------------------- faq ---------------------------------*/
+
+/* Bas */
+.faq {
+  padding: 5rem 0; /* Stabil top/bottom-spacing */
+  background: var(--color-body-background); /* Bakgrundsfärg från variabel */
+
+  .faq-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  /* Grid*/
+  .faq-area-grid {
+    display: grid; /* intern grid */
+    grid-template-columns: 1fr; /* två columner bredvid varandra */
+    gap: 1.2rem;
+   
+    /* Rubrik */
+    .faq-title {
+      color: var(--color-heading-text); /* rubrikfärg */
+      font-size: 32px; /* rubrikstorlek */
+      font-weight: 900; /* tjocklek */
+    }
+
+    /* innehåll */
+    .faq-ingress {
+      color: var(--color-heading-text); /* färg */
+      font-size: 18px; /* textstorlek */
+      font-weight: 160; /* tjocklek */
+    }
+    
+    .faq-item-grid {
+      display: grid; /* intern grid */
+      grid-template-columns: 1fr 1fr; /* två columner bredvid varandra */
+      gap: 1.2rem;
+    }
+
+    .faq-item {
+      display: grid;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid rgba(11,15,25,.08);
+      border-radius: 12px;
+      padding: 16px;
+      margin-top: 1rem; /* avstånd från topp */
+    }
+
+    .faq-text {
+      color: var(--color-heading-text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+  
+  /* frågelistan */
+    .faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 12px;
+    
+    /* listans innehåll */
+    li {
+      background: rgba(11,15,25,.02);
+      border: 1px solid rgba(11,15,25,.06);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 900;
+      color: var(--color-heading-text);
+    }
+
+    /* öppnad flik */
+    .faq-open {
+      flex-direction: column;
+      align-items: flex-start;
+      background: #fff;
+      padding: 18px 20px;
+    }
+
+    /* öppnad flik bild */
+    .faq-open img {
+      align-self: flex-end;
+      margin-top: -32px;
+    }
+    
+    /* text till öppnad flik */
+    .faq-open p {
+      font-weight: 400;
+      color: var(--color-body-text);
+      font-size: 14px;
+    }
+    
+    /* ikonerna till flikarna */
+    .img {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}

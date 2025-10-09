@@ -1,0 +1,95 @@
+/* ------------------------- header ---------------------------------*/
+
+.header {
+  .header-area { 
+    display: flex; /* Lägger header-innehåll i en flexbox */
+    justify-content: space-between; /* Låter elementen ligga på varsin sida */
+    align-items: center; /* Vertikalt centrerade element */
+    padding: 1rem 0; /* Avstånd ovanför och under header */
+
+    .actions {
+      display: flex; /* Flexbox för actions-sektionen */
+      justify-content: space-between; /* Jämnt utrymme mellan elementen */
+      align-items: center; /* Vertikal centrering */
+      gap: 1rem; /* Mellanrum mellan elementen */
+    }
+  }
+}
+
+/* Specifik stil för knappar med klassen .btn-signin */
+.btn-signin-text {
+  display: none; /* Döljer texten från början */
+  button {
+    font-weight: 600; /* Gör texten i knappen lite fetare */
+    font-size: 16px; /* Sätter textstorleken i knappen */
+    line-height: 24px; /* Sätter radavståndet i knappen */
+    color: white; /* Sätter textfärgen i knappen till vit */
+  }
+  
+  @media (width >= 770px) {
+    display: block; /* Visar texten om skärmen är minst 768px bred */
+  }
+}
+
+/* Specifik stil för knappar med klassen .btn-download */
+.app-download-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Dölj *textnoden* i .actions på mobil genom att nollställa textstorleken */
+@media (width <= 390px) {
+  .header .actions {
+    font-size: 0; /* gömmer själva "Dark Mode"-texten */
+  }
+}
+
+/* ------------------------- script.js ---------------------------------*/
+
+/* Dark Mode ElementById*/
+/* Toggle-knappens grundstil */
+#darkModeToggle {
+  appearance: none; /* Tar bort standardutseendet för knappen */
+  -webkit-appearance: none; /* För webkit-baserade webbläsare */
+  border: 0; /* Tar bort standardramen */
+  background: #9b98b0; /* Grundfärg för knappen */
+  width: 46px; /* Bredd på knappen */
+  height: 24px; /* Storlek på knappen */
+  border-radius: 9999px; /* Gör knappen rundad */
+  position: relative; /* För att kunna positionera pseudo-elementet inuti */
+  cursor: pointer; /* Visar pekare vid hover */
+  padding: 0; /* Tar bort inre marginal */
+  outline: none; /* Tar bort standardfokusramen */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); /* Lätt inre skugga */
+  transition: background .2s ease, box-shadow .2s ease; /* Smidig övergång för bakgrund och skugga */
+}
+
+/* “knoppen” */
+#darkModeToggle::before {
+  content: ""; /* Nödvändigt för att pseudo-element ska visas */
+  position: absolute; /* Absolut positionering inom knappen */
+  top: 2px; /* Placering från toppen */
+  left: 2px; /* Placering från vänster */
+  width: 20px; /* Bredd på "knoppen" */
+  height: 20px; /* Höjd på "knoppen" */
+  background: #ffffff; /* Färg på "knoppen" */
+  border-radius: 50%; /* Gör "knoppen" rund */
+  box-shadow: 0 1px 2px rgba(0,0,0,.25); /* Lätt skugga för 3D-effekt */
+  transition: transform .2s ease; /* Smidig övergång för position */
+}
+
+/* Påslaget läge (knapp + “knoppen” flyttas) */
+#darkModeToggle.is-on {
+  background: var(--primary); /* Ändrar bakgrundsfärg när påslagen */
+}
+#darkModeToggle.is-on::before {
+  transform: translateX(24px); /* Flyttar "knoppen" till höger när påslagen */
+}
+
+/* Fokus (tangentbord) */
+#darkModeToggle:focus-visible {
+  box-shadow:
+    0 0 0 2px #fff, /* Vit ring runt */
+    0 0 0 4px rgba(99,102,241,.7); /* Blå ring runt */
+}

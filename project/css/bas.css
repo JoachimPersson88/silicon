@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap'); /* Importerar Manrope-fonten från Google Fonts */
+
+/* ------------------------- body ---------------------------------*/
+
+/* Nollställer vissa standardinställningar för alla element samt deras pseudo-element (::before, ::after) */
+*, *::before, *::after {    
+  box-sizing: border-box; /* Inkluderar padding och border i elementets totala storlek */
+  margin: 0; /* Tar bort standardmarginaler på alla element */
+}
+
+/* Definierar CSS-variabler för färger och teman */
+:root {
+  --primary: #6366F1; /* Huvudfärg, används som bas för knappar och andra element */
+
+  --color-body-text: #565973; /* Textfärg för brödtext */
+  --color-body-background: #ffffff; /* Bakgrundsfärg för sidan */
+  --color-heading-text: #0b0f19; /* Textfärg för rubriker */
+
+  --color-button-text: #ffffff; /* Textfärg för knappar */
+  --color-button-background: var(--primary); /* Bakgrundsfärg för knappar */
+  --color-button-hover-background: #0c0fcc; /* Bakgrundsfärg för knappar vid hover */
+
+  --color-button-download-text: #ffffff; /* Textfärg för nedladdningsknappar */
+  --color-button-download-background: #0b0f19; /* Bakgrundsfärg för nedladdningsknappar */
+  --color-button-download-hover-backkground: #0b0f19; /* Bakgrundsfärg för nedladdningsknappar vid hover */
+}
+
+/* Grundläggande stil för body-elementet */
+body {
+  line-height: 1.5; /* Sätter radavståndet för text */
+  background-color: #ffffff; /* Grundbakgrundsfärg (dubbeldefinierad men skrivs över nedan) */
+  font-family: "Manrope", sans-serif; /* Använder Manrope som standardfont */
+  font-style: normal; /* Standard textstil */
+  font-weight: 400; /* Normal textvikt */
+  color: var(--color-body-text); /* Textfärg från variabel */
+  background-color: var(--color-body-background); /* Bakgrundsfärg från variabel */
+}
+
+/* Grundläggande stil för rubriker (h1-h6) */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-heading-text); /* Ger rubriker en specifik färg */
+}
+
+/* Gör bilder responsiva */
+img {
+  max-width: 100%; /* Gör att bilder inte överskrider sin containers bredd */
+  height: auto; /* Behåller bildens proportioner */
+}
+
+/* Smidig övergång för bakgrunds- och textfärger på hela sidan */
+html, body {
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+}
+
+/* Container för att centrera och begränsa bredden på innehållet */
+.container {
+  width: 100%; /* Full bredd */
+  max-width: 1320px; /* Maxbredd på innehållet */
+  margin-left: auto; /* Centrerar container horisontellt */
+  margin-right: auto; /* Centrerar container horisontellt */
+  padding-left: 1rem; /* Ger inre marginal till vänster */
+  padding-right: 1rem; /* Ger inre marginal till höger */
+}
+
+/* ------------------------- buttons ---------------------------------*/
+
+/* Grundläggande stil för knappar och element med klassen .btn */
+button, .btn {
+  display: flex; /* Gör knappar till flexbox-containrar */
+  justify-content: center; /* Centrerar innehåll horisontellt */
+  align-items: center; /* Centrerar innehåll vertikalt */
+  gap: 10px; /* Mellanrum mellan element inuti knappen */
+  height: 42px; /* Fast höjd på knappen */
+
+  color: var(--color-button-text); /* Textfärg för knappen */
+  background-color: var(--color-button-background); /* Bakgrundsfärg för knappen */
+  padding: 10px 20px; /* Inre marginal (top/bottom: 10px, left/right: 20px) */
+  border-radius: 4px; /* Rundar hörnen på knappen */
+  text-decoration: none; /* Tar bort understrykning om det är en länk */
+  transition: background 0.15s ease-in-out; /* Smidig övergång vid hover */
+
+  &:hover {
+    background-color: var(--color-button-hover-background); /* Ändrar bakgrundsfärg vid hover */
+  }
+
+  img {
+    height: 20px; /* Sätter en fast höjd för ikoner i knappar */
+    width: auto; /* Behåller proportionerna på ikoner */
+  }
+}
+
+/* ------------------------- footer ---------------------------------*/
+
+.footer {
+  background: var(--color-body-background);
+  padding: 1.5rem 0;
+  
+  .footer-area {
+    color: rgba(147, 151, 173, 1);
+    font-size: 14px;
+    text-align: center;
+  }
+}

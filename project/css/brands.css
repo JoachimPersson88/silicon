@@ -1,0 +1,67 @@
+/* ------------------------- brands ---------------------------------*/
+
+/* ====== MOBIL-LÄGE ====== */
+@media (width <= 390px) {
+  .brands {
+    display: none;
+  }
+}
+
+/* ====== TABLET-LÄGE ====== */
+@media (width >= 391px) and (width <= 768px) {
+  .brands {
+    display: block;
+  }
+
+  .brands .brands-area {
+    display: grid; /* Använder grid-layout för brands-området */
+    grid-template-columns: repeat(4, 1fr); /* Fyra kolumner för logotyperna */
+    gap: 24px; /* Mellanrum mellan logotyperna */
+    justify-items: center; /* Centrerar logotyperna horisontellt */
+    align-items: center; /* Centrerar logotyperna vertikalt */
+    padding: 3rem;
+  }
+
+  /* fick hjälp av chatGPT, detta är en pseudo-class som används för att styla om specifika element-rad utan att behöva bli nämnd som id eller klass*/
+  /* Dölj logo 5 & 6 */
+  .brands img:nth-of-type(9),
+  .brands img:nth-of-type(10),
+  .brands img:nth-of-type(11),
+  .brands img:nth-of-type(12) {
+    display: none;
+  }
+}
+
+/* ====== DESKTOP-LÄGE ====== */
+@media (width >= 769px) {
+  .brands {
+    display: block; /* Visa brands-sektionen på större skärmar */
+  }
+
+  .brands .brands-area {
+    display: grid; /* Använder grid-layout för brands-området */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px; /* Mellanrum mellan logotyperna */
+    justify-items: center; /* Centrerar logotyperna horisontellt */
+    align-items: center; /* Centrerar logotyperna vertikalt */
+    padding-top: 3rem;
+  }
+
+  /* Visa alla loggor igen */
+  .brands img {
+    display: inline; /* Visa alla logotyper */
+  }
+}
+
+/* ====== DARK-LÄGE ====== */
+.brands img.logoDark { 
+  display: none; /* dölj dark i ljust tema */
+}
+
+body.darkMode .brands img.logoLight { 
+  display: none; /* dölj light i mörkt tema */
+}
+
+body.darkMode .brands img.logoDark { 
+  display: inline; /* visa dark i mörkt tema */
+}

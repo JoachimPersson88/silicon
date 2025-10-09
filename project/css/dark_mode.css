@@ -1,0 +1,30 @@
+/* ------------------------- Dark Mode Toggle ---------------------------------*/
+
+/* DARK MODE – via klass på <body> */
+body.darkMode {
+  --primary: #818cf8;
+
+  --color-body-text: #ffffff; /* Ljusare textfärg för mörkt läge */
+  --color-body-background: #0b0f1a; /* Mörk bakgrundsfärg för mörkt läge */
+  --color-heading-text: #ffffff; /* Vit textfärg för rubriker i mörkt läge */
+
+  --color-button-text: #ffffff; /* Mörk textfärg för knappar i mörkt läge */
+  --color-button-background: #6366F1; /* Mörkare knappbakgrund i mörkt läge */
+  --color-button-hover-background: #818cf8; /* Ändrad hover-färg för knappar i mörkt läge */
+
+  transition: background-color 0.25s ease, color 0.25s ease; /* Smidig övergång för bakgrunds- och textfärger vid ändring */
+
+}
+
+/* Logotypers grundstil */
+.logoDark {
+  display: none; /* Döljer den mörka logotypen från början */
+}
+
+  body.darkMode .logoLight {
+  display: none; /* Döljer den ljusa logotypen när dark mode är aktiverat */
+}
+
+body.darkMode .logoDark {
+  display: inline; /* Visar den mörka logotypen när dark mode är aktiverat */
+}

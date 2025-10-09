@@ -1,0 +1,65 @@
+/* ------------------------- testimonials ---------------------------------*/
+
+/* Bas */
+.testimonials {
+  background: rgba(8, 0, 50, 0.05);
+  padding: 5rem 0;
+
+  /* Innehåll */
+  .testimonials-area {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+  }
+
+  /* vänster kolumn rubrik */
+  .testimonials-title {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--color-heading-text);
+  }
+
+  /* Höger kolumn grid */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1rem;
+  }
+
+  /* utlåtande */
+  .testimonials-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 24px 24px;
+    border: 4px solid rgba(11, 15, 25, 0.06);
+  }
+
+  /* text */
+  .testimonials-text {
+    color: rgba(86, 89, 115, 1);
+    font-size: 14px; 
+    margin: 0 0 18px 0; 
+  }
+
+  /* författaren */
+  .testimonials-author {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* namn */
+  .testimonials-name {
+    font-weight: 900;
+    color: rgba(11, 15, 25, 1);
+  }
+
+  /* yrkesroll */
+  .testimonials-role {
+    font-size: 14px;
+    color: var(--color-body-text);
+    color: rgba(147, 151, 173, 1);
+  }
+}
