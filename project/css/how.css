@@ -39,16 +39,39 @@
   display: grid;
   gap: 0.5rem;
   
-  .how-header {
+  .how-header-desktop {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 900;
+    color: var(--color-heading-text);
+  }
+    .how-header-tablet {
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--color-heading-text);
+  }
+
+    .how-header-mobile {
+    font-size: 18px;
+    font-weight: 900;
     color: var(--color-heading-text);
   }
   
-  .how-text {
-    font-size: 14px;
+  .how-text-desktop {
+    font-size: 16px;
     line-height: 1.6;
-    color: var(--color-body-text);
+    color: rgba(86, 89, 115, 1);
+  }
+
+  .how-text-tablet {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(86, 89, 115, 1);
+  }
+
+  .how-text-mobile {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(86, 89, 115, 1);
   }
 }
 
@@ -71,6 +94,7 @@
   }
 
   .hide-mobile { display: block; } /* visa sidotelefoner */
+
 }
 
 /* ====== DESKTOP-LÄGE ====== */

@@ -38,7 +38,7 @@
     - Brands ✔️  
     - Features ✔️
     - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text till alla vyer)
-    - App Features ✔️ (Behöver bättre styling överlag) 
+    - App Features ✔️ 
     - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
     - FAQ ✔️ (Accordion) (funktionaliteten i accordion saknas, nu är den bara visuell )  
     - Subscribe ✔️ (email-inputen saknar ikon och subscribe knappen saknar funktion) 
