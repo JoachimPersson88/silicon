@@ -37,7 +37,7 @@
     - Hero  ✔️
     - Brands ✔️  
     - Features ✔️
-    - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text till alla vyer)
+    - How-Does-It-Work ✔️
     - App Features ✔️ 
     - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
     - FAQ ✔️ (Accordion) (funktionaliteten i accordion saknas, nu är den bara visuell )  
