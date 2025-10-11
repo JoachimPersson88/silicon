@@ -42,7 +42,7 @@
     .hero-image {
       display: none; /* Dölj telefonbild i mobil-läget */
     }
-  }
+
   
   /* ====== MOBIL-LÄGE (<= 390px) ====== */
   @media (width <= 390px) {
@@ -146,4 +146,5 @@
     grid-template-columns: repeat(2, 210px); /* Större knappbredd på desktop */
     justify-content: start; /* Håll knapparna vänsterställda */
   }
+}
 }
