@@ -21,7 +21,7 @@
   - Hero ✔️
   - Brands ✔️
   - Features ✔️
-  - How-Does-It-Work ✔️ (Inte fullt klart med bilder och text)
+  - How-Does-It-Work ✔️
   - App Features ✔️
   - Testimonials ✔️
   - FAQ (Accordion) ✔️
