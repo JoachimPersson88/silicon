@@ -1,11 +1,15 @@
 /* ------------------------- subscribe ---------------------------------*/
-.subscribe {
 
+/* ====== Desktop-läge ====== */
+.subscribe {
+  
+  /* Behållaren */
   .container{
     background: rgba(8, 0, 50, 0.05);
     border-radius: 12px; 
   }
 
+  /* Huvudlayout för sektionen */
   .subscribe-area {
     display: grid;
     grid-template-columns: 1fr 1fr;   /* två kolumner */
@@ -14,17 +18,20 @@
     padding: 4rem;
   }
 
+  /* Innehållet*/
   .subscribe-content {
     display: flex;
     align-items: center;
     gap: 1rem;
 
+    /* Ikonen */
     .subscribe-icon {
       width: 78px;
       height: 78px;
       flex: 0 0 auto;
     }
 
+    /* Rubriken */
     .subscribe-header {
       color: var(--color-heading-text);
       font-size: 22px;
@@ -34,11 +41,13 @@
     }
   }
 
+  /* formuläret med input och knapp */
   .subscribe-form {
     display: flex;
     justify-content: flex-end; /* putta formuläret åt höger på större skärmar */
     gap: 0;
-
+    
+    /* E-postfältet */
     input {
       height: 52px;
       width: 450px;
@@ -52,6 +61,7 @@
       outline: none;
     }
 
+    /* Knappen */
     button {
       height: 52px;
       width: 142px;
@@ -62,32 +72,36 @@
       color: #fff;
       font-weight: 600;
       font-size: 14px;
-      cursor: pointer;
     }
   }
 }
 
-/* ====== TABLET ====== */
+/* ====== TABLET-Läge ====== */
 @media (width >= 391px) and (width <= 768px) {
   .subscribe-area {
     grid-template-columns: 1fr 1fr; /* två kolumner */
     
+    /* Ikonen */
     .subscribe-icon {
       width: 65px;
       height: 58.5px;
     }
     
+    /* rubrik */
     .subscribe-header {
       display: none;
     }
     
+    /* Visa tablet-rubrik */
     .subscribe-header-smaller-devices{
       font-weight: 900;
       font-size: 22px;
     }
-
+    
+    /* Formuläret */
     .subscribe-form {
       
+      /* E-postfältet */
       input {
         height: 51px;
         width: 201px;
@@ -97,6 +111,7 @@
         background: #fff;
       }
 
+      /* Knappen */
       button {
         height: 52px;
         width: 115px;
@@ -105,6 +120,58 @@
         color: #fff;
         font-weight: 600;
         font-size: 14px;
+      }
+    }
+  }
+}
+
+/* ====== MOBIL-Läge ====== */
+@media (width <= 390px) {
+  .subscribe{ 
+    
+    /* Huvudlayout för sektionen */
+    .subscribe-area{
+      grid-template-columns: 1fr;
+      padding: 1rem;
+
+      /* innehåållet */
+      .subscribe-content{
+        margin-top: 20px;
+      }
+
+      /* Ikonen */
+      .subscribe-icon   {
+        width: 78px;
+        height: 93px;
+      }
+      
+      /* Rubrik */
+      .subscribe-header { 
+        display: none; 
+      }
+      
+      /* Visa mobil-rubrik */
+      .subscribe-header-smaller-devices {
+        font-weight: 900;
+        font-size: 22px;
+      }
+
+      /* formuläret */
+      .subscribe-form {
+        width: 100%;
+        margin-bottom: 20px;
+
+        /* e-postfältet */
+        input {
+          width: auto; /* förhindrar stapeln att sticka ut, denna löste mit problem efter mycket om och men....*/
+          height: 56px;
+        }
+
+        /* knappen */
+        button {
+          width: 42%;
+          height: 56px;
+        }
       }
     }
   }
