@@ -41,7 +41,7 @@
     - App Features ✔️ 
     - Testimonials ✔️ (Qoutes-ikonerna ska vara på rätt plats och stjärnorna ska väl eventuellt bli självstånde)
     - FAQ ✔️ (Accordion) (funktionaliteten i accordion saknas, nu är den bara visuell )  
-    - Subscribe ✔️ (email-inputen saknar ikon och subscribe knappen saknar funktion) 
+    - Subscribe ✔️
     - Footer ✔️  
     Notera färger, typsnitt, spacing, knappar etc.
 
@@ -57,7 +57,7 @@ För VG måste du använda olika brancher för sektionerna:
     - App Features ✔️
     - Testimonials  
     - FAQ (Accordion)  
-    - Subscribe  
+    - Subscribe ✔️ 
     - Footer ✔️  
 
 **Arbetsflöde:**  
