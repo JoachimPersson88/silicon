@@ -44,7 +44,7 @@
     }
 
   
-  /* ====== MOBIL-LÄGE (<= 390px) ====== */
+  /* ====== MOBIL-LÄGE ====== */
   @media (width <= 390px) {
     
     .hero-title {

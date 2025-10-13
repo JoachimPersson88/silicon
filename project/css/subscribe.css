@@ -2,13 +2,15 @@
 .subscribe {
 
   .container{
-      background: rgba(8, 0, 50, 0.05);
+    background: rgba(8, 0, 50, 0.05);
+    border-radius: 12px; 
   }
 
   .subscribe-area {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;   /* två kolumner */
     align-items: center;
+    gap: 2rem;
     padding: 4rem;
   }
 
@@ -20,38 +22,90 @@
     .subscribe-icon {
       width: 78px;
       height: 78px;
+      flex: 0 0 auto;
     }
 
     .subscribe-header {
       color: var(--color-heading-text);
       font-size: 22px;
       font-weight: 900;
-      margin: 8px;
+      margin: 8px 0;
+      line-height: 1.25;
     }
   }
 
   .subscribe-form {
     display: flex;
+    justify-content: flex-end; /* putta formuläret åt höger på större skärmar */
+    gap: 0;
 
     input {
       height: 52px;
       width: 450px;
+      max-width: 100%;
       border-radius: 8px 0 0 8px;
+      border: 1px solid rgba(11,15,25,.15);
+      padding: 0 14px;
       font-size: 14px;
       color: var(--color-heading-text);
       background: #fff;
+      outline: none;
     }
 
     button {
       height: 52px;
       width: 142px;
-      padding: 0px 16px;
+      padding: 0 16px;
       border: none;
       border-radius: 0 8px 8px 0;
       background: var(--primary);
       color: #fff;
       font-weight: 600;
       font-size: 14px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* ====== TABLET ====== */
+@media (width >= 391px) and (width <= 768px) {
+  .subscribe-area {
+    grid-template-columns: 1fr 1fr; /* två kolumner */
+    
+    .subscribe-icon {
+      width: 65px;
+      height: 58.5px;
+    }
+    
+    .subscribe-header {
+      display: none;
+    }
+    
+    .subscribe-header-smaller-devices{
+      font-weight: 900;
+      font-size: 22px;
+    }
+
+    .subscribe-form {
+      
+      input {
+        height: 51px;
+        width: 201px;
+        border-radius: 8px 0 0 8px;
+        font-size: 14px;
+        color: var(--color-heading-text);
+        background: #fff;
+      }
+
+      button {
+        height: 52px;
+        width: 115px;
+        border-radius: 0 8px 8px 0;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+      }
     }
   }
 }
